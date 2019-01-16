@@ -1,7 +1,7 @@
 {
-  "private": true,
+  "private": false,
   "name": "example-company-website-gatsby-sanity-combo",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Sanity <hello@sanity.io>",
   "scripts": {
     "clean": "lerna clean",

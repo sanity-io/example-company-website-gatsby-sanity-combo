@@ -1,7 +1,7 @@
 {
-  "private": true,
+  "private": false,
   "name": "example-company-website-gatsby-sanity-combo-frontend",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Sanity <hello@sanity.io>",
   "scripts": {
     "build": "gatsby build",
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.6",
-    "@sanity/image-url": "^0.139.0",
+    "@sanity/image-url": "^0.140.0",
     "date-fns": "^1.30.1",
     "dotenv": "^6.2.0",
     "gatsby": "^2.0.76",
