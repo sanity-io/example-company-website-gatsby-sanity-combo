@@ -1,8 +1,21 @@
 # example-company-website-gatsby-sanity-combo
 
+- [Features](#features)
+- [Installation](#installation)
+- [Enable Gatsby watch mode for drafts](#enable-gatsby-watch-mode-for-drafts)
+- [Usage example](#usage-example)
+- [Development setup](#development-setup)
+  - [Run it](#run-it)
+  - [Development workflow](#development-workflow)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
+
 This examples combines [Gatsby](https://www.gatsbyjs.org/) site generation with [Sanity](https://www.sanity.io) content management in a neat little company website.
 
 <!-- [![Video thumb]()](https://youtube.com) -->
+
+## Features
 
 **Sanity Studio with a schema for**
   * 🏢 Company info
@@ -27,7 +40,6 @@ This examples combines [Gatsby](https://www.gatsbyjs.org/) site generation with 
 ## Installation
 
 ```sh
-
 git clone git@github.com:sanity-io/example-company-website-gatsby-sanity-combo.git
 cd example-company-website-gatsby-sanity-combo
 npm install
