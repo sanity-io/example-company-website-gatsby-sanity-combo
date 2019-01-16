@@ -11,7 +11,7 @@ This examples combines [Gatsby](https://www.gatsbyjs.org/) site generation with 
   * 👩🏾‍💻 People
   * 📰 Blog posts
 
-![Screenshot of the Studio](https://cdn.sanity.io/images/3do82whm/production/3942b5b21f642b4c5ca68dfb2b40c820713aa3c6-2488x1520.png)
+<img alt="Screenshot of the Sanity Studio" src="https://cdn.sanity.io/images/3do82whm/production/3942b5b21f642b4c5ca68dfb2b40c820713aa3c6-2488x1520.png" width="500">
 
 
 **A company website built with Gatsby**
@@ -22,7 +22,7 @@ This examples combines [Gatsby](https://www.gatsbyjs.org/) site generation with 
   * 📸 gatsby-image support
   * 🔧 Minimal configuration
 
-![Screenshot of the Gatsby Frontend](https://cdn.sanity.io/images/3do82whm/production/98c052ccd208759285a04a272dc5d297efb41229-2028x1510.png)
+<img alt="Screenshot of the Gatsby Frontend" src="https://cdn.sanity.io/images/3do82whm/production/98c052ccd208759285a04a272dc5d297efb41229-2028x1510.png" width="500">
 
 ## Installation
 
