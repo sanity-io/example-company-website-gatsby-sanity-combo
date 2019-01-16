@@ -2,7 +2,7 @@
 
 This examples combines [Gatsby](https://www.gatsbyjs.org/) site generation with [Sanity](https://www.sanity.io) content management in a neat little company website.
 
-[![Video thumb]()](https://youtube.com)
+<!-- [![Video thumb]()](https://youtube.com) -->
 
 **Sanity Studio with a schema for**
   * 🏢 Company info
@@ -11,7 +11,7 @@ This examples combines [Gatsby](https://www.gatsbyjs.org/) site generation with 
   * 👩🏾‍💻 People
   * 📰 Blog posts
 
-[50% width image of the studio]
+![Screenshot of the Studio](https://cdn.sanity.io/images/3do82whm/production/3942b5b21f642b4c5ca68dfb2b40c820713aa3c6-2488x1520.png)
 
 
 **A company website built with Gatsby**
@@ -22,7 +22,7 @@ This examples combines [Gatsby](https://www.gatsbyjs.org/) site generation with 
   * 📸 gatsby-image support
   * 🔧 Minimal configuration
 
-[50% width image of the gatsby]
+![Screenshot of the Gatsby Frontend](https://cdn.sanity.io/images/3do82whm/production/98c052ccd208759285a04a272dc5d297efb41229-2028x1510.png)
 
 ## Installation
 
@@ -39,8 +39,6 @@ npm init
 
 ```
 
-`npm init` also runs `sanity init` that
-
 ## Enable Gatsby watch mode for drafts
 
 We have enabled the watch mode in the `gatsby-source-sanity` plugin. That means that means that your frontend will automatically update with content changes whenever you publish them. If you want the frontend to show content changes in real time, you must do the following:
@@ -55,7 +53,7 @@ If you restart the local development server, it will now show unpublished change
 
 ## Usage example
 
-This project demos Sanity.io with [Gatsby using our Gatsby LINK ME]() source plugin. It's a good starter for a simple company site, a portfolio site for an agency or a personal blog with an attached portfolio.
+This project demos Sanity.io with Gatsby using our [source plugin](https://www.gatsbyjs.org/packages/gatsby-source-sanity). It's a good starter for a simple company site, a portfolio site for an agency or a personal blog with an attached portfolio.
 
 We tried to strike a balance between a useful example and a minimal footprint to make it easier to iterate on design and content model. [Let us know](https://slack.sanity.io) should you have questions!
 
@@ -75,13 +73,10 @@ npm start
 
 ### Development workflow
 
-CLEAN ME UP
-
 We wrote a blog post about how to use this example, but if you would like to just start tinkering:
 
-- The Sanity Studio keeps its schemas in `
-- ./studio/schemas`. We will hot reload the editor when you edit them so just start experimenting. Read more about our schemas here
-- We followed Gatsby conventions and you can read all about them here
+- The Sanity Studio keeps its schemas in `./studio/schemas`. We will hot reload the editor when you edit them so just start experimenting. [Read more about our schemas here](https://www.sanity.io/docs/content-studio/the-schema).
+- We followed Gatsby conventions and [you can read all about them here](https://www.gatsbyjs.org/tutorial/).
 - If you want Gatsby to not throw errors on missing fields for unpopulated data you need to redeploy the GraphQL API so we can generate schemas – `sanity graphql deploy`
 
 
