@@ -1,6 +1,6 @@
 import { Link } from 'gatsby'
 import React from 'react'
-import Icon from './icon'
+import Icon from './icons'
 import { cn } from '../lib/helpers'
 
 import styles from './header.module.css'

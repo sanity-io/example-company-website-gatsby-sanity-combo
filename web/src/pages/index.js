@@ -109,8 +109,8 @@ const IndexPage = props => {
   }
 
   const site = data && data.site
-  const postNodes = data && data.posts && mapEdgesToNodes(data.posts)
-  const projectNodes = data && data.projects && mapEdgesToNodes(data.projects)
+  const postNodes = data && data.posts && mapEdgesToNodes(data.posts) || []
+  const projectNodes = data && data.projects && mapEdgesToNodes(data.projects) || []
 
   if (!site) {
     throw new Error(
@@ -123,14 +123,14 @@ const IndexPage = props => {
       <SEO title={site.title} description={site.description} keywords={site.keywords} />
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>
-        {projectNodes && projectNodes.length > 0 && (
+        {projectNodes.length > 0 && (
           <ProjectPreviewGrid
             title='Latest projects'
             nodes={projectNodes}
             browseMoreHref='/projects/'
           />
         )}
-        {postNodes && postNodes.length > 0 && (
+        {postNodes.length > 0 && (
           <BlogPostPreviewGrid
             title='Latest blog posts'
             nodes={postNodes}
