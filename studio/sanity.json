@@ -1,11 +1,11 @@
 {
   "root": true,
+  "api": {
+    "projectId": "",
+    "dataset": ""
+  },
   "project": {
     "name": "Gatsby Demo"
-  },
-  "api": {
-    "projectId": "7j9cnsfo",
-    "dataset": "production"
   },
   "plugins": [
     "@sanity/base",
