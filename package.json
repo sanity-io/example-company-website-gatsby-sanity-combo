@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "lerna clean",
     "deploy": "lerna run deploy",
-    "init": "cd studio && sanity init",
+    "init": "cd studio && sanity init && lerna run graphql-deploy",
     "format": "lerna run format",
     "graphql-deploy": "lerna run graphql-deploy",
     "lint": "lerna run lint",
