@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "example-company-website-gatsby-sanity-combo",
+  "builds": [
+    {
+      "src": "web/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "web/public" }
+    }
+  ],
+  "alias": ["example-company-website-gatsby-sanity-combo.now.sh"]
+}

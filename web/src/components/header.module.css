@@ -1,0 +1,112 @@
+@import '../styles/media-queries.css';
+@import '../styles/vars.css';
+
+.root {
+  position: relative;
+  z-index: 100;
+}
+
+.wrapper {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 1em;
+  display: flex;
+
+  @media (--media-min-small) {
+    padding: 1.5em 1.5em;
+  }
+}
+
+.branding {
+  font-size: inherit;
+  margin: 0;
+  flex: 1;
+
+  @nest & a {
+    display: inline-block;
+    padding: 0.5em;
+    color: inherit;
+    text-decoration: none;
+
+    @media (hover: hover) {
+      @nest &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.toggleNavButton {
+  appearance: none;
+  font-size: 25px;
+  border: none;
+  background: none;
+  margin: 0;
+  padding: calc(14 / 17 / 2 * 1rem);
+  outline: none;
+
+  & svg {
+    display: block;
+  }
+
+  @media (--media-min-small) {
+    display: none;
+  }
+}
+
+.nav {
+  display: none;
+
+  @nest & ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  @nest & ul li a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  @media (hover: hover) {
+    @nest & ul li a:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media (--media-max-small) {
+    position: absolute;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    left: 0;
+    right: 0;
+    top: 4rem;
+
+    @nest & ul {
+      padding: 1rem 0;
+    }
+
+    @nest & ul li a {
+      padding: 0.5rem 1.5rem;
+    }
+  }
+
+  @media (--media-min-small) {
+    display: block;
+
+    @nest & ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    @nest & ul li a {
+      padding: 0.5rem;
+    }
+  }
+}
+
+.showNav {
+  display: block;
+}

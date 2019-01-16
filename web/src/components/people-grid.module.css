@@ -1,0 +1,59 @@
+@import '../styles/media-queries.css';
+
+.root {
+  margin: 4em 0;
+
+}
+
+.grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 2em;
+  grid-row-gap: 2em;
+
+  @media (--media-min-small) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (--media-min-medium) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.profileCard {
+  margin: 1rem 0;
+}
+
+.profileMediaThumb {
+  position: relative;
+  padding-bottom: 100%;
+  background: #eee;
+
+  @nest & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.headline {
+  font: inherit;
+  font-weight: 700;
+  margin: 1em 0 0.5em 0;
+}
+
+.bio {
+  @nest & p {
+    margin: 0.5em 0;
+  }
+
+  @nest & strong {
+    font-weight: 600;
+  }
+}

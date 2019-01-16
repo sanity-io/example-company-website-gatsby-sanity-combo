@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "name": "example-company-website-gatsby-sanity-combo",
+  "version": "0.0.0",
+  "author": "Sanity <hello@sanity.io>",
+  "scripts": {
+    "clean": "lerna clean",
+    "deploy": "lerna run deploy",
+    "format": "lerna run format",
+    "graphql-deploy": "lerna run graphql-deploy",
+    "lint": "lerna run lint",
+    "now-deploy": "now && now alias",
+    "postinstall": "lerna bootstrap",
+    "sanity-deploy": "lerna run sanity-deploy",
+    "start": "lerna run start --parallel",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "lerna": "^3.9.0"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "name": "example-company-website-gatsby-sanity-combo-frontend",
+  "version": "0.0.0",
+  "author": "Sanity <hello@sanity.io>",
+  "scripts": {
+    "build": "gatsby build",
+    "deploy": "npm run now-deploy",
+    "develop": "gatsby develop",
+    "lint": "eslint .",
+    "now-build": "npm run build",
+    "start": "npm run develop",
+    "format": "prettier-eslint --write \"**/*.js\" \"!.cache/**\" \"!node_modules/**\" \"!public/**\"",
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+  },
+  "dependencies": {
+    "@sanity/block-content-to-react": "^2.0.6",
+    "@sanity/image-url": "^0.139.0",
+    "date-fns": "^1.30.1",
+    "dotenv": "^6.2.0",
+    "gatsby": "^2.0.76",
+    "gatsby-plugin-postcss": "^2.0.2",
+    "gatsby-plugin-react-helmet": "^3.0.2",
+    "gatsby-source-sanity": "^1.0.3",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.5.0",
+    "react": "^16.8.0-alpha.0",
+    "react-dom": "^16.8.0-alpha.0",
+    "react-helmet": "^5.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.11.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-config-standard-react": "^7.0.2",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.12.2",
+    "eslint-plugin-standard": "^4.0.0",
+    "prettier-eslint-cli": "^4.7.1"
+  }
+}

@@ -1,0 +1,57 @@
+@import '../../styles/media-queries.css';
+@import '../../styles/vars.css';
+
+.root {
+  background: var(--color-black);
+  color: var(--color-white);
+  margin: 2rem -1.5rem;
+  overflow: hidden;
+  padding: 1rem;
+
+  @media (--media-min-small) {
+    margin: 2rem -2rem;
+  }
+
+  @media (--media-min-medium) {
+    margin: 2rem 0;
+  }
+}
+
+.nav {
+  padding: 0.5rem 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+
+  @nest & button {
+    outline: none;
+    -webkit-font-smoothing: inherit;
+    appearance: none;
+    font: inherit;
+    background: none;
+    border: none;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.carousel {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  transition: transform 250ms;
+}
+
+.slide {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  box-sizing: border-box;
+  padding: 0 0.5rem;
+
+  @nest & img {
+    width: 100%;
+    height: auto;
+  }
+}

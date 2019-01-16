@@ -1,0 +1,14 @@
+.root {
+  margin: 2rem 0;
+  padding: 0;
+
+  @nest & img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.caption {
+  composes: small from '../typography.module.css';
+  margin-top: 0.5rem;
+}

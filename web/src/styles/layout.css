@@ -1,0 +1,18 @@
+@import './vars.css';
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: var(--font-base-size);
+  line-height: var(--font-base-line-height);
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  background: var(--color-white);
+  color: var(--color-black);
+  margin: 0;
+}
+
+html, body, body > div, body > div > div {
+  height: 100%;
+}
