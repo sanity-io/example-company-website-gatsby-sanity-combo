@@ -85,7 +85,7 @@ npm start
 
 ### Development workflow
 
-We wrote a blog post about how to use this example, but if you would like to just start tinkering:
+We wrote a [blog post](https://www.sanity.io/blog/get-started-with-gatsby-and-structured-content) about how to use this example, but if you would like to just start tinkering:
 
 - The Sanity Studio keeps its schemas in `./studio/schemas`. We will hot reload the editor when you edit them so just start experimenting. [Read more about our schemas here](https://www.sanity.io/docs/content-studio/the-schema).
 - We followed Gatsby conventions and [you can read all about them here](https://www.gatsbyjs.org/tutorial/).
