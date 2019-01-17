@@ -1,6 +1,6 @@
 # A sample company website built with [Gatsby](https://www.gatsbyjs.org/) & [Sanity.io](https://www.sanity.io)
 
-This examples combines [Gatsby](https://www.gatsbyjs.org/) site generation with [Sanity](https://www.sanity.io) content management in a neat little company website. Read [the blog post](https://www.sanity.io/blog/get-started-with-gatsby-and-structured-content) and [see the getting started video](https://www.youtube.com/watch?v=STtpXBvJmDA).
+This examples combines [Gatsby](https://www.gatsbyjs.org/) site generation with [Sanity](https://www.sanity.io) content management in a neat little company website. Read [the blog post](https://www.sanity.io/blog/get-started-with-gatsby-and-structured-content) and [see the getting started video](https://www.youtube.com/watch?v=qU4lFYp3KiQ).
 
 - [Features](#features)
 - [Installation](#installation)
@@ -47,6 +47,8 @@ npm install -g @sanity/cli
 npm run init
 
 ```
+
+See the [getting started video](https://www.youtube.com/watch?v=qU4lFYp3KiQ) for a walkthrough of the installation.
 
 ## Enable Gatsby watch mode for drafts
 
