@@ -17,16 +17,6 @@ This examples combines [Gatsby](https://www.gatsbyjs.org/) site generation with 
 
 ## Features
 
-**Sanity Studio with a schema for**
-  * 🏢 Company info
-  * 📃 Pages
-  * 👨🏼‍🎨 Projects
-  * 👩🏾‍💻 People
-  * 📰 Blog posts
-
-<img alt="Screenshot of the Sanity Studio" src="https://cdn.sanity.io/images/3do82whm/production/3942b5b21f642b4c5ca68dfb2b40c820713aa3c6-2488x1520.png" width="500">
-
-
 **A company website built with Gatsby**
   * 📡 Real-time content preview in development
   * ⏱ Fast & frugal builds
@@ -35,7 +25,17 @@ This examples combines [Gatsby](https://www.gatsbyjs.org/) site generation with 
   * 📸 gatsby-image support
   * 🔧 Minimal configuration
 
-<img alt="Screenshot of the Gatsby Frontend" src="https://cdn.sanity.io/images/3do82whm/production/98c052ccd208759285a04a272dc5d297efb41229-2028x1510.png" width="500">
+<img alt="Screenshot of the Gatsby Frontend" src="https://cdn.sanity.io/images/3do82whm/production/6b5621160768a7977a94dae297b30f08bac7c139-1920x1080.jpg?h=500&fit=max" width="500">
+
+**Sanity Studio with a schema for**
+  * 🏢 Company info
+  * 📃 Pages
+  * 👨🏼‍🎨 Projects
+  * 👩🏾‍💻 People
+  * 📰 Blog posts
+
+<img alt="Screenshot of the Sanity Studio" src="https://cdn.sanity.io/images/3do82whm/production/437719211087e3345ffb6a2bf0840c1849be1158-1920x1080.jpg?h=500&fit=max" width="500">
+
 
 ## Installation
 
