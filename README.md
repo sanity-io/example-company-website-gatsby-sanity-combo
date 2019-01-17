@@ -1,4 +1,6 @@
-# example-company-website-gatsby-sanity-combo
+# A sample company website built with [Gatsby](https://www.gatsbyjs.org/) & [Sanity.io](https://www.sanity.io)
+
+This examples combines [Gatsby](https://www.gatsbyjs.org/) site generation with [Sanity](https://www.sanity.io) content management in a neat little company website.
 
 - [Features](#features)
 - [Installation](#installation)
@@ -11,9 +13,9 @@
 - [Contributing](#contributing)
 - [License](#license)
 
-This examples combines [Gatsby](https://www.gatsbyjs.org/) site generation with [Sanity](https://www.sanity.io) content management in a neat little company website.
+[![Watch a video about the company website built with Gatsby using Sanity.io as a headless CMS](https://cdn.sanity.io/images/3do82whm/production/4f652e6d114e7010aa633b81cbcb97c335980fc8-1920x1080.png?w=500)](https://www.youtube.com/watch?v=STtpXBvJmDA)
 
-<!-- [![Video thumb]()](https://youtube.com) -->
+![See the example up and running](https://www.youtube.com/watch?v=STtpXBvJmDA)
 
 ## Features
 
@@ -25,17 +27,12 @@ This examples combines [Gatsby](https://www.gatsbyjs.org/) site generation with 
   * 📸 gatsby-image support
   * 🔧 Minimal configuration
 
-<img alt="Screenshot of the Gatsby Frontend" src="https://cdn.sanity.io/images/3do82whm/production/6b5621160768a7977a94dae297b30f08bac7c139-1920x1080.jpg?h=500&fit=max" width="500">
-
 **Sanity Studio with a schema for**
   * 🏢 Company info
   * 📃 Pages
   * 👨🏼‍🎨 Projects
   * 👩🏾‍💻 People
   * 📰 Blog posts
-
-<img alt="Screenshot of the Sanity Studio" src="https://cdn.sanity.io/images/3do82whm/production/437719211087e3345ffb6a2bf0840c1849be1158-1920x1080.jpg?h=500&fit=max" width="500">
-
 
 ## Installation
 
