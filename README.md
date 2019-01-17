@@ -53,7 +53,7 @@ npm run init
 
 ## Enable Gatsby watch mode for drafts
 
-We have enabled the watch mode in the `gatsby-source-sanity` plugin. That means that means that your frontend will automatically update with content changes whenever you publish them. If you want the frontend to show content changes in real time, you must do the following:
+We have enabled the watch mode in the `gatsby-source-sanity` plugin, which means that your frontend will automatically update with content changes whenever you publish them. If you want the frontend to show content changes in real time, you must do the following:
 
 * Go to [manage.sanity.io](https://manage.sanity.io) and find your project (or run the command `sanity manage` in the studio folder)
 * Navigate to Settings->API and scroll down to the **Tokens** section
@@ -95,7 +95,7 @@ We wrote a blog post about how to use this example, but if you would like to jus
 ## Deployment
 
 ```sh
-# Deploy GraphQL to the Sanity API
+# Deploy a GraphQL API and schema to Sanity
 npm run graphql-deploy
 
 # Deploy the Sanity Studio to *.sanity.studio
