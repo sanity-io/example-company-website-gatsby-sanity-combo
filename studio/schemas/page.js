@@ -14,6 +14,5 @@ export default {
       title: 'Body',
       type: 'blockContent'
     }
-  ],
-
+  ]
 }

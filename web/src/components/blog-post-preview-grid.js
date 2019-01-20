@@ -17,11 +17,12 @@ function BlogPostPreviewGrid (props) {
         </h2>
       )}
       <ul className={styles.grid}>
-        {props.nodes && props.nodes.map(node => (
-          <li key={node.id}>
-            <BlogPostPreview {...node} />
-          </li>
-        ))}
+        {props.nodes &&
+          props.nodes.map(node => (
+            <li key={node.id}>
+              <BlogPostPreview {...node} />
+            </li>
+          ))}
       </ul>
       {props.browseMoreHref && (
         <div className={styles.browseMoreNav}>

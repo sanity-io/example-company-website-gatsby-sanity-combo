@@ -48,6 +48,5 @@ export default {
       title: 'name',
       media: 'image'
     }
-  },
-
+  }
 }

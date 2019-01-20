@@ -1,5 +1,6 @@
-
-const { api: { projectId, dataset } } = require('../studio/sanity.json')
+const {
+  api: { projectId, dataset }
+} = require('../studio/sanity.json')
 
 require('dotenv').config()
 

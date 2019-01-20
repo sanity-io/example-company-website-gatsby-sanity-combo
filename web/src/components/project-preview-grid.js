@@ -17,11 +17,12 @@ function ProjectPreviewGrid (props) {
         </h2>
       )}
       <ul className={styles.grid}>
-        {props.nodes && props.nodes.map(node => (
-          <li key={node.id}>
-            <ProjectPreview {...node} />
-          </li>
-        ))}
+        {props.nodes &&
+          props.nodes.map(node => (
+            <li key={node.id}>
+              <ProjectPreview {...node} />
+            </li>
+          ))}
       </ul>
       {props.browseMoreHref && (
         <div className={styles.browseMoreNav}>
@@ -31,6 +32,7 @@ function ProjectPreviewGrid (props) {
     </div>
   )
 }
+
 ProjectPreviewGrid.defaultProps = {
   title: '',
   nodes: [],
