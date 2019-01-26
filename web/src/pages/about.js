@@ -12,7 +12,9 @@ import { responsiveTitle1 } from '../components/typography.module.css'
 
 export const query = graphql`
   query AboutPageQuery {
-    page: sanityPage(_id: { eq: "about" }) {
+    page: sanityPage(_id: { regex: "/(drafts.|)about/" }) {
+      id
+      _id
       title
       _rawBody
     }
@@ -49,7 +51,7 @@ const AboutPage = props => {
 
   if (!page) {
     throw new Error(
-      'Missing "About" page data. Open the studio at http://localhost:3333 and add "About" page data'
+      'Missing "About" page data. Open the studio at http://localhost:3333 and add "About" page data and restart the development server.'
     )
   }
 
@@ -59,7 +61,10 @@ const AboutPage = props => {
       <Container>
         <h1 className={responsiveTitle1}>{page.title}</h1>
         <BlockContent blocks={page._rawBody || []} />
-        {personNodes && personNodes.length > 0 && <PeopleGrid items={personNodes} title='People' />}
+        {personNodes &&
+          personNodes.length > 0 && (
+            <PeopleGrid items={personNodes} title="People" />
+          )}
       </Container>
     </Layout>
   )
