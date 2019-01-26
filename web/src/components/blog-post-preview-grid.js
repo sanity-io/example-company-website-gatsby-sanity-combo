@@ -18,7 +18,7 @@ function BlogPostPreviewGrid (props) {
       )}
       <ul className={styles.grid}>
         {props.nodes &&
-          props.nodes.map(node => (
+          props.nodes.filter(({ slug }) => (slug || {}).current).map(node => (
             <li key={node.id}>
               <BlogPostPreview {...node} />
             </li>
