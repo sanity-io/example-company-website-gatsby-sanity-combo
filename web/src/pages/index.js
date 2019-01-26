@@ -10,7 +10,7 @@ import Layout from '../containers/layout'
 
 export const query = graphql`
   query IndexPageQuery {
-    site: sanitySiteSettings(_id: { eq: "siteSettings" }) {
+    site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
       title
       description
       keywords
@@ -19,7 +19,6 @@ export const query = graphql`
     projects: allSanityProject(
       limit: 6
       sort: { fields: [publishedAt], order: DESC }
-      filter: { slug: { current: { ne: null } } }
     ) {
       edges {
         node {
@@ -58,7 +57,6 @@ export const query = graphql`
     posts: allSanityPost(
       limit: 6
       sort: { fields: [publishedAt], order: DESC }
-      filter: { slug: { current: { ne: null } } }
     ) {
       edges {
         node {
