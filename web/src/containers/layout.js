@@ -4,10 +4,10 @@ import Layout from '../components/layout'
 
 const query = graphql`
   query SiteTitleQuery {
-    site: sanitySiteSettings(_id: { eq: "siteSettings" }) {
+    site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
       title
     }
-    companyInfo: sanityCompanyInfo(_id: { eq: "companyInfo" }) {
+    companyInfo: sanityCompanyInfo(_id: { regex: "/(drafts.|)companyInfo/" }) {
       name
       address1
       address2
