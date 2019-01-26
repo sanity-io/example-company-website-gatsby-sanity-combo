@@ -12,6 +12,7 @@ export default {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      description: 'A slug is required to appear in the frontend',
       options: {
         source: 'title',
         maxLength: 96

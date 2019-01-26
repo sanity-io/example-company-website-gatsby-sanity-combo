@@ -12,10 +12,16 @@ export default {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      description: 'A slug is required to appear in the frontend',
       options: {
         source: 'title',
         maxLength: 96
       }
+    },
+    {
+      name: 'publishedAt',
+      title: 'Published at',
+      type: 'datetime'
     },
     {
       name: 'excerpt',
@@ -48,11 +54,6 @@ export default {
       title: 'Categories',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'category' } }]
-    },
-    {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime'
     },
     {
       name: 'body',
