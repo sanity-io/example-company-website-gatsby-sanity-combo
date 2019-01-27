@@ -36,6 +36,8 @@ This examples combines [Gatsby](https://www.gatsbyjs.org/) site generation with 
 
 ## Installation
 
+Read the [step-by-step blog post](https://www.sanity.io/blog/how-to-quickly-set-up-a-gatsby-js-jamstack-website-with-a-headless-cms).
+
 ```sh
 git clone git@github.com:sanity-io/example-company-website-gatsby-sanity-combo.git
 cd example-company-website-gatsby-sanity-combo
