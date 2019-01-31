@@ -21,6 +21,7 @@ export default {
     {
       name: 'publishedAt',
       title: 'Published at',
+      description: 'You can use this field to schedule post where you show them',
       type: 'datetime'
     },
     {
