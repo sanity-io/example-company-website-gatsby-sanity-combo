@@ -13,12 +13,12 @@
     "test": "sanity check"
   },
   "dependencies": {
-    "@sanity/base": "^0.140.9",
-    "@sanity/components": "^0.140.9",
-    "@sanity/core": "^0.140.9",
-    "@sanity/default-layout": "^0.140.9",
+    "@sanity/base": "^0.140.10",
+    "@sanity/components": "^0.140.10",
+    "@sanity/core": "^0.140.10",
+    "@sanity/default-layout": "^0.140.10",
     "@sanity/default-login": "^0.140.3",
-    "@sanity/desk-tool": "^0.140.9",
+    "@sanity/desk-tool": "^0.140.10",
     "prop-types": "^15.7.2",
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
