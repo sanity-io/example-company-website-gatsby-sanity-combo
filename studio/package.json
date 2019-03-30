@@ -20,7 +20,7 @@
     "@sanity/default-login": "^0.140.3",
     "@sanity/desk-tool": "^0.140.13",
     "prop-types": "^15.7.2",
-    "react": "^16.8.4",
+    "react": "^16.8.5",
     "react-dom": "^16.8.4"
   },
   "devDependencies": {
