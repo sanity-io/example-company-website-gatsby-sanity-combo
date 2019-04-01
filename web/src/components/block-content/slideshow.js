@@ -5,7 +5,6 @@ import { imageUrlFor } from '../../lib/image-url'
 import styles from './slideshow.module.css'
 
 function Slideshow (props) {
-  console.log(props)
   if (!props.slides) return null
   const len = props.slides.length
   const [index, setIndex] = useState(0)

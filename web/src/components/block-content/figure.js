@@ -5,7 +5,6 @@ import { imageUrlFor } from '../../lib/image-url'
 import styles from './figure.module.css'
 
 function Figure (props) {
-  console.log(props)
   return (
     <figure className={styles.root}>
       {props.asset && (
