@@ -1,6 +1,7 @@
 import React from 'react'
-import { buildImageObj } from '../../lib/helpers'
-import { imageUrlFor } from '../../lib/image-url'
+import GatsbyImage from 'gatsby-image'
+import { getFluidGatsbyImage } from 'gatsby-source-sanity'
+import { api as sanityConfig } from '../../../../studio/sanity.json'
 
 import styles from './figure.module.css'
 
@@ -8,10 +9,8 @@ function Figure (props) {
   return (
     <figure className={styles.root}>
       {props.asset && (
-        <img
-          src={imageUrlFor(buildImageObj(props))
-            .width(1200)
-            .url()}
+        <GatsbyImage
+          fluid={getFluidGatsbyImage(props, { maxWidth: 1200 }, sanityConfig)}
           alt={props.alt}
         />
       )}
