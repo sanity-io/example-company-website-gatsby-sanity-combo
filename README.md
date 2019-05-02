@@ -77,7 +77,7 @@ We tried to strike a balance between a useful example and a minimal footprint to
 
 ```sh
 npm start
-# Studio at http://localhost:3000
+# Studio at http://localhost:3333
 # Web frontend at http://localhost:8000
 # GraphiQL explorer at http://localhost:8000/___graphql
 ```
