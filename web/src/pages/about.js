@@ -14,7 +14,6 @@ export const query = graphql`
   query AboutPageQuery {
     page: sanityPage(_id: { regex: "/(drafts.|)about/" }) {
       id
-      _id
       title
       _rawBody
     }
