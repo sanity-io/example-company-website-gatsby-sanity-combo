@@ -16,7 +16,7 @@
     "@sanity/base": "^0.140.17",
     "@sanity/components": "^0.140.18",
     "@sanity/core": "^0.140.18",
-    "@sanity/default-layout": "^0.140.18",
+    "@sanity/default-layout": "^0.140.25",
     "@sanity/default-login": "^0.140.15",
     "@sanity/desk-tool": "^0.140.18",
     "prop-types": "^15.7.2",
