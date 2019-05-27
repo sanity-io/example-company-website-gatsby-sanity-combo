@@ -33,7 +33,9 @@ function requireConfig (path) {
   try {
     return require('../studio/sanity.json')
   } catch (e) {
-    console.error('Failed to require sanity.json. Fill in projectId and dataset name manually in gatsby-config.js')
+    console.error(
+      'Failed to require sanity.json. Fill in projectId and dataset name manually in gatsby-config.js'
+    )
     return {
       api: {
         projectId: process.env.SANITY_PROJECT_ID || '',
