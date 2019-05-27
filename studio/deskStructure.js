@@ -1,7 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder'
-import MdBusiness from 'react-icons/lib/md/business'
-import MdSettings from 'react-icons/lib/md/settings'
-import FaFileO from 'react-icons/lib/fa/file-o'
+import { MdBusiness, MdSettings } from 'react-icons/md'
+import { FaFile } from 'react-icons/fa'
 
 const hiddenTypes = ['category', 'companyInfo', 'page', 'person', 'post', 'project', 'siteSettings']
 
@@ -49,7 +48,7 @@ export default () =>
                     .schemaType('page')
                     .documentId('about')
                 )
-                .icon(FaFileO),
+                .icon(FaFile),
               S.listItem()
                 .title('Contact')
                 .child(
@@ -58,7 +57,7 @@ export default () =>
                     .schemaType('page')
                     .documentId('contact')
                 )
-                .icon(FaFileO)
+                .icon(FaFile)
             ])
         ),
       S.listItem()

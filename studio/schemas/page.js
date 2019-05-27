@@ -3,7 +3,7 @@ export default {
   title: 'Page',
   type: 'document',
   liveEdit: false,
-  __experimental_actions: ['update', 'publish', /*'create', 'delete'*/],
+  __experimental_actions: ['update', 'publish' /* 'create', 'delete' */],
   fields: [
     {
       name: 'title',
