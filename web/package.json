@@ -7,7 +7,7 @@
     "build": "gatsby build",
     "deploy": "npm run now-deploy",
     "develop": "gatsby develop",
-    "empty-cache": "rimraf .cache",
+    "empty-cache": "gatsby clean",
     "lint": "eslint .",
     "now-build": "npm run build",
     "start": "npm run develop",
