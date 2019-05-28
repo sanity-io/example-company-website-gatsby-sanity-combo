@@ -1,4 +1,4 @@
-import MdApps from 'react-icons/lib/md/apps'
+import { MdApps } from 'react-icons/md'
 
 export default {
   name: 'category',
