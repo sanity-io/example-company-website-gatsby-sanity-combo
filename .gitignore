@@ -6,3 +6,6 @@
 
 # lerna files
 /lerna-debug.log
+
+# Ignore hidden files as default
+.*
