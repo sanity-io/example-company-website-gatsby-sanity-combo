@@ -10,6 +10,7 @@
     "empty-cache": "gatsby clean",
     "lint": "eslint .",
     "now-build": "npm run build",
+    "now-dev": "npm run build",
     "start": "npm run develop",
     "format": "prettier-eslint --write \"**/*.js\" \"!.cache/**\" \"!node_modules/**\" \"!public/**\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""

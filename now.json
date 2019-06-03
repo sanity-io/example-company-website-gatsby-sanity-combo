@@ -5,7 +5,19 @@
     {
       "src": "web/package.json",
       "use": "@now/static-build",
-      "config": { "distDir": "web/public" }
+      "config": { "distDir": "public" }
+    },
+    {
+      "src": "studio/package.json",
+      "use": "@now/static-build",
+      "config":  { "distDir": "dist" }
+    }
+  ],
+  "routes": [
+    { "src": "^/studio/static/(.*)", "dest": "/studio/static/$1" },
+    { "src": "^/studio/(.*)", "dest": "/studio/index.html" },
+    {
+      "src": "/(.*)", "dest": "/web/$1"
     }
   ],
   "alias": ["example-company-website-gatsby-sanity-combo.now.sh"]

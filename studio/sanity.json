@@ -5,7 +5,8 @@
     "dataset": "production"
   },
   "project": {
-    "name": "Gatsby Demo"
+    "name": "Gatsby Demo",
+    "basePath": "/studio"
   },
   "plugins": [
     "@sanity/base",

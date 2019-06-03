@@ -10,10 +10,14 @@
     "sanity-deploy": "sanity deploy",
     "lint": "eslint .",
     "start": "sanity start",
+    "build": "sanity build",
+    "now-build": "npm run build",
+    "now-dev": "npm run build",
     "test": "sanity check"
   },
   "dependencies": {
     "@sanity/base": "^0.140.30",
+    "@sanity/cli": "^0.140.30",
     "@sanity/components": "^0.140.25",
     "@sanity/core": "^0.140.25",
     "@sanity/default-layout": "^0.140.25",
