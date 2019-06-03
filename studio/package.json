@@ -13,7 +13,7 @@
     "test": "sanity check"
   },
   "dependencies": {
-    "@sanity/base": "^0.140.17",
+    "@sanity/base": "^0.140.30",
     "@sanity/components": "^0.140.25",
     "@sanity/core": "^0.140.25",
     "@sanity/default-layout": "^0.140.25",
