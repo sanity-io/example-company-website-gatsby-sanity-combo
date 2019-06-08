@@ -103,7 +103,7 @@ npm run graphql-deploy
 # Deploy the Sanity Studio to *.sanity.studio
 npm run sanity-deploy
 
-# Build & deploy to Zeit's Now
+# Build & deploy to Zeit's Now. Remember to set `basePath` to "/studio" in sanity.json
 npm run now-deploy
 ```
 
