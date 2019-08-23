@@ -1,13 +1,24 @@
 {
   "root": true,
   "api": {
-    "projectId": "7j9cnsfo",
+    "projectId": "7yrlqidg",
     "dataset": "production"
   },
   "project": {
-    "name": "Gatsby Demo",
+    "name": "WebriQ",
     "basePath": "/"
   },
+  "__experimental_spaces": [
+    {
+      "name": "webriq",
+      "title": "webriq.com",
+      "default": true,
+      "api": {
+        "projectId": "7yrlqidg",
+        "dataset": "production"
+      }
+    }
+  ],
   "plugins": [
     "@sanity/base",
     "@sanity/components",
@@ -26,4 +37,3 @@
     }
   ]
 }
-
