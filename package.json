@@ -14,6 +14,7 @@
     "now-deploy": "now && now alias",
     "postinstall": "lerna bootstrap",
     "sanity-deploy": "lerna run sanity-deploy",
+    "sanity-build": "lerna run build",
     "start": "lerna run empty-cache && lerna run start --parallel",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
