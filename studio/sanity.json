@@ -1,13 +1,24 @@
 {
   "root": true,
   "api": {
-  "projectId": "fsctf9k8",
+    "projectId": "fsctf9k8",
     "dataset": "production"
   },
   "project": {
     "name": "WebriQ Sandbox",
     "basePath": "/"
   },
+  "__experimental_spaces": [
+    {
+      "name": "webriqsandbox",
+      "title": "WebriQ Sandbox",
+      "default": true,
+      "api": {
+        "projectId": "fsctf9k8",
+        "dataset": "production"
+      }
+    }
+  ],
   "plugins": [
     "@sanity/base",
     "@sanity/components",
@@ -26,4 +37,3 @@
     }
   ]
 }
-
