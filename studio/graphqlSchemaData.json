@@ -1,1 +1,6593 @@
-
+{
+  "enablePlayground": true,
+  "schema": {
+    "interfaces": [
+      {
+        "description": "A Sanity document",
+        "fields": [
+          {
+            "description": "Document ID",
+            "fieldName": "_id",
+            "isNullable": false,
+            "type": "ID"
+          },
+          {
+            "description": "Document type",
+            "fieldName": "_type",
+            "isNullable": false,
+            "type": "String"
+          },
+          {
+            "description": "Date the document was created",
+            "fieldName": "_createdAt",
+            "isNullable": false,
+            "type": "Datetime"
+          },
+          {
+            "description": "Date the document was last modified",
+            "fieldName": "_updatedAt",
+            "isNullable": false,
+            "type": "Datetime"
+          },
+          {
+            "description": "Current document revision",
+            "fieldName": "_rev",
+            "isNullable": false,
+            "type": "String"
+          }
+        ],
+        "kind": "Interface",
+        "name": "Document"
+      }
+    ],
+    "queries": [
+      {
+        "args": [
+          {
+            "description": "Category document ID",
+            "isNullable": false,
+            "name": "id",
+            "type": "ID"
+          }
+        ],
+        "constraints": [
+          {
+            "comparator": "EQUALS",
+            "field": "_id",
+            "value": {
+              "argName": "id",
+              "kind": "argumentValue"
+            }
+          }
+        ],
+        "fieldName": "Category",
+        "type": "Category"
+      },
+      {
+        "args": [
+          {
+            "description": "CompanyInfo document ID",
+            "isNullable": false,
+            "name": "id",
+            "type": "ID"
+          }
+        ],
+        "constraints": [
+          {
+            "comparator": "EQUALS",
+            "field": "_id",
+            "value": {
+              "argName": "id",
+              "kind": "argumentValue"
+            }
+          }
+        ],
+        "fieldName": "CompanyInfo",
+        "type": "CompanyInfo"
+      },
+      {
+        "args": [
+          {
+            "description": "Page document ID",
+            "isNullable": false,
+            "name": "id",
+            "type": "ID"
+          }
+        ],
+        "constraints": [
+          {
+            "comparator": "EQUALS",
+            "field": "_id",
+            "value": {
+              "argName": "id",
+              "kind": "argumentValue"
+            }
+          }
+        ],
+        "fieldName": "Page",
+        "type": "Page"
+      },
+      {
+        "args": [
+          {
+            "description": "Person document ID",
+            "isNullable": false,
+            "name": "id",
+            "type": "ID"
+          }
+        ],
+        "constraints": [
+          {
+            "comparator": "EQUALS",
+            "field": "_id",
+            "value": {
+              "argName": "id",
+              "kind": "argumentValue"
+            }
+          }
+        ],
+        "fieldName": "Person",
+        "type": "Person"
+      },
+      {
+        "args": [
+          {
+            "description": "Post document ID",
+            "isNullable": false,
+            "name": "id",
+            "type": "ID"
+          }
+        ],
+        "constraints": [
+          {
+            "comparator": "EQUALS",
+            "field": "_id",
+            "value": {
+              "argName": "id",
+              "kind": "argumentValue"
+            }
+          }
+        ],
+        "fieldName": "Post",
+        "type": "Post"
+      },
+      {
+        "args": [
+          {
+            "description": "Project document ID",
+            "isNullable": false,
+            "name": "id",
+            "type": "ID"
+          }
+        ],
+        "constraints": [
+          {
+            "comparator": "EQUALS",
+            "field": "_id",
+            "value": {
+              "argName": "id",
+              "kind": "argumentValue"
+            }
+          }
+        ],
+        "fieldName": "Project",
+        "type": "Project"
+      },
+      {
+        "args": [
+          {
+            "description": "SiteSettings document ID",
+            "isNullable": false,
+            "name": "id",
+            "type": "ID"
+          }
+        ],
+        "constraints": [
+          {
+            "comparator": "EQUALS",
+            "field": "_id",
+            "value": {
+              "argName": "id",
+              "kind": "argumentValue"
+            }
+          }
+        ],
+        "fieldName": "SiteSettings",
+        "type": "SiteSettings"
+      },
+      {
+        "args": [
+          {
+            "description": "SanityImageAsset document ID",
+            "isNullable": false,
+            "name": "id",
+            "type": "ID"
+          }
+        ],
+        "constraints": [
+          {
+            "comparator": "EQUALS",
+            "field": "_id",
+            "value": {
+              "argName": "id",
+              "kind": "argumentValue"
+            }
+          }
+        ],
+        "fieldName": "SanityImageAsset",
+        "type": "SanityImageAsset"
+      },
+      {
+        "args": [
+          {
+            "description": "SanityFileAsset document ID",
+            "isNullable": false,
+            "name": "id",
+            "type": "ID"
+          }
+        ],
+        "constraints": [
+          {
+            "comparator": "EQUALS",
+            "field": "_id",
+            "value": {
+              "argName": "id",
+              "kind": "argumentValue"
+            }
+          }
+        ],
+        "fieldName": "SanityFileAsset",
+        "type": "SanityFileAsset"
+      },
+      {
+        "args": [
+          {
+            "isFieldFilter": true,
+            "name": "where",
+            "type": "CategoryFilter"
+          },
+          {
+            "description": "Max documents to return",
+            "isFieldFilter": false,
+            "name": "limit",
+            "type": "Int"
+          },
+          {
+            "description": "Offset at which to start returning documents from",
+            "isFieldFilter": false,
+            "name": "offset",
+            "type": "Int"
+          }
+        ],
+        "fieldName": "allCategories",
+        "filter": "_type == \"category\"",
+        "type": {
+          "children": {
+            "isNullable": false,
+            "type": "Category"
+          },
+          "isNullable": false,
+          "kind": "List"
+        }
+      },
+      {
+        "args": [
+          {
+            "isFieldFilter": true,
+            "name": "where",
+            "type": "CompanyInfoFilter"
+          },
+          {
+            "description": "Max documents to return",
+            "isFieldFilter": false,
+            "name": "limit",
+            "type": "Int"
+          },
+          {
+            "description": "Offset at which to start returning documents from",
+            "isFieldFilter": false,
+            "name": "offset",
+            "type": "Int"
+          }
+        ],
+        "fieldName": "allCompanyInfos",
+        "filter": "_type == \"companyInfo\"",
+        "type": {
+          "children": {
+            "isNullable": false,
+            "type": "CompanyInfo"
+          },
+          "isNullable": false,
+          "kind": "List"
+        }
+      },
+      {
+        "args": [
+          {
+            "isFieldFilter": true,
+            "name": "where",
+            "type": "PageFilter"
+          },
+          {
+            "description": "Max documents to return",
+            "isFieldFilter": false,
+            "name": "limit",
+            "type": "Int"
+          },
+          {
+            "description": "Offset at which to start returning documents from",
+            "isFieldFilter": false,
+            "name": "offset",
+            "type": "Int"
+          }
+        ],
+        "fieldName": "allPages",
+        "filter": "_type == \"page\"",
+        "type": {
+          "children": {
+            "isNullable": false,
+            "type": "Page"
+          },
+          "isNullable": false,
+          "kind": "List"
+        }
+      },
+      {
+        "args": [
+          {
+            "isFieldFilter": true,
+            "name": "where",
+            "type": "PersonFilter"
+          },
+          {
+            "description": "Max documents to return",
+            "isFieldFilter": false,
+            "name": "limit",
+            "type": "Int"
+          },
+          {
+            "description": "Offset at which to start returning documents from",
+            "isFieldFilter": false,
+            "name": "offset",
+            "type": "Int"
+          }
+        ],
+        "fieldName": "allPeople",
+        "filter": "_type == \"person\"",
+        "type": {
+          "children": {
+            "isNullable": false,
+            "type": "Person"
+          },
+          "isNullable": false,
+          "kind": "List"
+        }
+      },
+      {
+        "args": [
+          {
+            "isFieldFilter": true,
+            "name": "where",
+            "type": "PostFilter"
+          },
+          {
+            "description": "Max documents to return",
+            "isFieldFilter": false,
+            "name": "limit",
+            "type": "Int"
+          },
+          {
+            "description": "Offset at which to start returning documents from",
+            "isFieldFilter": false,
+            "name": "offset",
+            "type": "Int"
+          }
+        ],
+        "fieldName": "allPosts",
+        "filter": "_type == \"post\"",
+        "type": {
+          "children": {
+            "isNullable": false,
+            "type": "Post"
+          },
+          "isNullable": false,
+          "kind": "List"
+        }
+      },
+      {
+        "args": [
+          {
+            "isFieldFilter": true,
+            "name": "where",
+            "type": "ProjectFilter"
+          },
+          {
+            "description": "Max documents to return",
+            "isFieldFilter": false,
+            "name": "limit",
+            "type": "Int"
+          },
+          {
+            "description": "Offset at which to start returning documents from",
+            "isFieldFilter": false,
+            "name": "offset",
+            "type": "Int"
+          }
+        ],
+        "fieldName": "allProjects",
+        "filter": "_type == \"project\"",
+        "type": {
+          "children": {
+            "isNullable": false,
+            "type": "Project"
+          },
+          "isNullable": false,
+          "kind": "List"
+        }
+      },
+      {
+        "args": [
+          {
+            "isFieldFilter": true,
+            "name": "where",
+            "type": "SiteSettingsFilter"
+          },
+          {
+            "description": "Max documents to return",
+            "isFieldFilter": false,
+            "name": "limit",
+            "type": "Int"
+          },
+          {
+            "description": "Offset at which to start returning documents from",
+            "isFieldFilter": false,
+            "name": "offset",
+            "type": "Int"
+          }
+        ],
+        "fieldName": "allSiteSettings",
+        "filter": "_type == \"siteSettings\"",
+        "type": {
+          "children": {
+            "isNullable": false,
+            "type": "SiteSettings"
+          },
+          "isNullable": false,
+          "kind": "List"
+        }
+      },
+      {
+        "args": [
+          {
+            "isFieldFilter": true,
+            "name": "where",
+            "type": "SanityImageAssetFilter"
+          },
+          {
+            "description": "Max documents to return",
+            "isFieldFilter": false,
+            "name": "limit",
+            "type": "Int"
+          },
+          {
+            "description": "Offset at which to start returning documents from",
+            "isFieldFilter": false,
+            "name": "offset",
+            "type": "Int"
+          }
+        ],
+        "fieldName": "allSanityImageAssets",
+        "filter": "_type == \"sanity.imageAsset\"",
+        "type": {
+          "children": {
+            "isNullable": false,
+            "type": "SanityImageAsset"
+          },
+          "isNullable": false,
+          "kind": "List"
+        }
+      },
+      {
+        "args": [
+          {
+            "isFieldFilter": true,
+            "name": "where",
+            "type": "SanityFileAssetFilter"
+          },
+          {
+            "description": "Max documents to return",
+            "isFieldFilter": false,
+            "name": "limit",
+            "type": "Int"
+          },
+          {
+            "description": "Offset at which to start returning documents from",
+            "isFieldFilter": false,
+            "name": "offset",
+            "type": "Int"
+          }
+        ],
+        "fieldName": "allSanityFileAssets",
+        "filter": "_type == \"sanity.fileAsset\"",
+        "type": {
+          "children": {
+            "isNullable": false,
+            "type": "SanityFileAsset"
+          },
+          "isNullable": false,
+          "kind": "List"
+        }
+      }
+    ],
+    "types": [
+      {
+        "fields": [
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "fieldName": "asset",
+            "isReference": true,
+            "type": "SanityImageAsset"
+          },
+          {
+            "fieldName": "hotspot",
+            "type": "SanityImageHotspot"
+          },
+          {
+            "fieldName": "crop",
+            "type": "SanityImageCrop"
+          }
+        ],
+        "kind": "Type",
+        "name": "Image",
+        "originalName": "image",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "fieldName": "asset",
+            "isReference": true,
+            "type": "SanityFileAsset"
+          }
+        ],
+        "kind": "Type",
+        "name": "File",
+        "originalName": "file",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "children": {
+              "type": "Span"
+            },
+            "fieldName": "children",
+            "kind": "List"
+          },
+          {
+            "fieldName": "style",
+            "type": "String"
+          },
+          {
+            "fieldName": "list",
+            "type": "String"
+          }
+        ],
+        "kind": "Type",
+        "name": "Block",
+        "originalName": "block",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "children": {
+              "type": "String"
+            },
+            "fieldName": "marks",
+            "kind": "List"
+          },
+          {
+            "fieldName": "text",
+            "type": "String"
+          }
+        ],
+        "kind": "Type",
+        "name": "Span",
+        "originalName": "span",
+        "type": "Object"
+      },
+      {
+        "children": {
+          "type": "BlockOrFigureOrSlideshow"
+        },
+        "kind": "List",
+        "name": "BlockContent",
+        "originalName": "blockContent"
+      },
+      {
+        "children": {
+          "type": "Block"
+        },
+        "kind": "List",
+        "name": "BlockText",
+        "originalName": "blockText"
+      },
+      {
+        "fields": [
+          {
+            "description": "Document ID",
+            "fieldName": "_id",
+            "isNullable": false,
+            "type": "ID"
+          },
+          {
+            "description": "Document type",
+            "fieldName": "_type",
+            "isNullable": false,
+            "type": "String"
+          },
+          {
+            "description": "Date the document was created",
+            "fieldName": "_createdAt",
+            "isNullable": false,
+            "type": "Datetime"
+          },
+          {
+            "description": "Date the document was last modified",
+            "fieldName": "_updatedAt",
+            "isNullable": false,
+            "type": "Datetime"
+          },
+          {
+            "description": "Current document revision",
+            "fieldName": "_rev",
+            "isNullable": false,
+            "type": "String"
+          },
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "title",
+            "type": "String"
+          },
+          {
+            "fieldName": "description",
+            "type": "Text"
+          }
+        ],
+        "interfaces": ["Document"],
+        "kind": "Type",
+        "name": "Category",
+        "originalName": "category",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "description": "Document ID",
+            "fieldName": "_id",
+            "isNullable": false,
+            "type": "ID"
+          },
+          {
+            "description": "Document type",
+            "fieldName": "_type",
+            "isNullable": false,
+            "type": "String"
+          },
+          {
+            "description": "Date the document was created",
+            "fieldName": "_createdAt",
+            "isNullable": false,
+            "type": "Datetime"
+          },
+          {
+            "description": "Date the document was last modified",
+            "fieldName": "_updatedAt",
+            "isNullable": false,
+            "type": "Datetime"
+          },
+          {
+            "description": "Current document revision",
+            "fieldName": "_rev",
+            "isNullable": false,
+            "type": "String"
+          },
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "name",
+            "type": "String"
+          },
+          {
+            "fieldName": "email",
+            "type": "Email"
+          },
+          {
+            "fieldName": "address1",
+            "type": "String"
+          },
+          {
+            "fieldName": "address2",
+            "type": "String"
+          },
+          {
+            "fieldName": "zipCode",
+            "type": "String"
+          },
+          {
+            "fieldName": "city",
+            "type": "String"
+          },
+          {
+            "fieldName": "country",
+            "type": "String"
+          }
+        ],
+        "interfaces": ["Document"],
+        "kind": "Type",
+        "name": "CompanyInfo",
+        "originalName": "companyInfo",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "fieldName": "alt",
+            "type": "String"
+          },
+          {
+            "fieldName": "caption",
+            "type": "String"
+          },
+          {
+            "fieldName": "asset",
+            "isReference": true,
+            "type": "SanityImageAsset"
+          },
+          {
+            "fieldName": "hotspot",
+            "type": "SanityImageHotspot"
+          },
+          {
+            "fieldName": "crop",
+            "type": "SanityImageCrop"
+          }
+        ],
+        "kind": "Type",
+        "name": "Figure",
+        "originalName": "figure",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "fieldName": "alt",
+            "type": "String"
+          },
+          {
+            "fieldName": "asset",
+            "isReference": true,
+            "type": "SanityImageAsset"
+          },
+          {
+            "fieldName": "hotspot",
+            "type": "SanityImageHotspot"
+          },
+          {
+            "fieldName": "crop",
+            "type": "SanityImageCrop"
+          }
+        ],
+        "kind": "Type",
+        "name": "MainImage",
+        "originalName": "mainImage",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "description": "Document ID",
+            "fieldName": "_id",
+            "isNullable": false,
+            "type": "ID"
+          },
+          {
+            "description": "Document type",
+            "fieldName": "_type",
+            "isNullable": false,
+            "type": "String"
+          },
+          {
+            "description": "Date the document was created",
+            "fieldName": "_createdAt",
+            "isNullable": false,
+            "type": "Datetime"
+          },
+          {
+            "description": "Date the document was last modified",
+            "fieldName": "_updatedAt",
+            "isNullable": false,
+            "type": "Datetime"
+          },
+          {
+            "description": "Current document revision",
+            "fieldName": "_rev",
+            "isNullable": false,
+            "type": "String"
+          },
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "title",
+            "type": "String"
+          },
+          {
+            "fieldName": "bodyRaw",
+            "isRawAlias": true,
+            "originalName": "body",
+            "type": "JSON"
+          }
+        ],
+        "interfaces": ["Document"],
+        "kind": "Type",
+        "name": "Page",
+        "originalName": "page",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "description": "Document ID",
+            "fieldName": "_id",
+            "isNullable": false,
+            "type": "ID"
+          },
+          {
+            "description": "Document type",
+            "fieldName": "_type",
+            "isNullable": false,
+            "type": "String"
+          },
+          {
+            "description": "Date the document was created",
+            "fieldName": "_createdAt",
+            "isNullable": false,
+            "type": "Datetime"
+          },
+          {
+            "description": "Date the document was last modified",
+            "fieldName": "_updatedAt",
+            "isNullable": false,
+            "type": "Datetime"
+          },
+          {
+            "description": "Current document revision",
+            "fieldName": "_rev",
+            "isNullable": false,
+            "type": "String"
+          },
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "name",
+            "type": "String"
+          },
+          {
+            "fieldName": "slug",
+            "type": "Slug"
+          },
+          {
+            "fieldName": "image",
+            "type": "Image"
+          },
+          {
+            "children": {
+              "type": "Block"
+            },
+            "fieldName": "bioRaw",
+            "isRawAlias": true,
+            "kind": "List",
+            "originalName": "bio",
+            "type": "JSON"
+          }
+        ],
+        "interfaces": ["Document"],
+        "kind": "Type",
+        "name": "Person",
+        "originalName": "person",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "description": "Document ID",
+            "fieldName": "_id",
+            "isNullable": false,
+            "type": "ID"
+          },
+          {
+            "description": "Document type",
+            "fieldName": "_type",
+            "isNullable": false,
+            "type": "String"
+          },
+          {
+            "description": "Date the document was created",
+            "fieldName": "_createdAt",
+            "isNullable": false,
+            "type": "Datetime"
+          },
+          {
+            "description": "Date the document was last modified",
+            "fieldName": "_updatedAt",
+            "isNullable": false,
+            "type": "Datetime"
+          },
+          {
+            "description": "Current document revision",
+            "fieldName": "_rev",
+            "isNullable": false,
+            "type": "String"
+          },
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "title",
+            "type": "String"
+          },
+          {
+            "fieldName": "slug",
+            "type": "Slug"
+          },
+          {
+            "description": "You can use this field to schedule post where you show them",
+            "fieldName": "publishedAt",
+            "type": "Datetime"
+          },
+          {
+            "fieldName": "excerptRaw",
+            "isRawAlias": true,
+            "originalName": "excerpt",
+            "type": "JSON"
+          },
+          {
+            "children": {
+              "type": "PostAuthor"
+            },
+            "fieldName": "authors",
+            "kind": "List"
+          },
+          {
+            "fieldName": "mainImage",
+            "type": "MainImage"
+          },
+          {
+            "children": {
+              "isReference": true,
+              "type": "Category"
+            },
+            "fieldName": "categories",
+            "kind": "List"
+          },
+          {
+            "fieldName": "bodyRaw",
+            "isRawAlias": true,
+            "originalName": "body",
+            "type": "JSON"
+          }
+        ],
+        "interfaces": ["Document"],
+        "kind": "Type",
+        "name": "Post",
+        "originalName": "post",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "fieldName": "person",
+            "isReference": true,
+            "type": "Person"
+          },
+          {
+            "children": {
+              "type": "String"
+            },
+            "fieldName": "roles",
+            "kind": "List"
+          }
+        ],
+        "kind": "Type",
+        "name": "PostAuthor",
+        "originalName": "postAuthor",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "description": "Document ID",
+            "fieldName": "_id",
+            "isNullable": false,
+            "type": "ID"
+          },
+          {
+            "description": "Document type",
+            "fieldName": "_type",
+            "isNullable": false,
+            "type": "String"
+          },
+          {
+            "description": "Date the document was created",
+            "fieldName": "_createdAt",
+            "isNullable": false,
+            "type": "Datetime"
+          },
+          {
+            "description": "Date the document was last modified",
+            "fieldName": "_updatedAt",
+            "isNullable": false,
+            "type": "Datetime"
+          },
+          {
+            "description": "Current document revision",
+            "fieldName": "_rev",
+            "isNullable": false,
+            "type": "String"
+          },
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "title",
+            "type": "String"
+          },
+          {
+            "fieldName": "slug",
+            "type": "Slug"
+          },
+          {
+            "description": "You can use this field to schedule projects where you show them",
+            "fieldName": "publishedAt",
+            "type": "Datetime"
+          },
+          {
+            "fieldName": "excerptRaw",
+            "isRawAlias": true,
+            "originalName": "excerpt",
+            "type": "JSON"
+          },
+          {
+            "children": {
+              "type": "ProjectMember"
+            },
+            "fieldName": "members",
+            "kind": "List"
+          },
+          {
+            "fieldName": "startedAt",
+            "type": "Datetime"
+          },
+          {
+            "fieldName": "endedAt",
+            "type": "Datetime"
+          },
+          {
+            "fieldName": "mainImage",
+            "type": "MainImage"
+          },
+          {
+            "children": {
+              "isReference": true,
+              "type": "Category"
+            },
+            "fieldName": "categories",
+            "kind": "List"
+          },
+          {
+            "fieldName": "bodyRaw",
+            "isRawAlias": true,
+            "originalName": "body",
+            "type": "JSON"
+          },
+          {
+            "children": {
+              "isReference": true,
+              "type": "Project"
+            },
+            "fieldName": "relatedProjects",
+            "kind": "List"
+          }
+        ],
+        "interfaces": ["Document"],
+        "kind": "Type",
+        "name": "Project",
+        "originalName": "project",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "fieldName": "person",
+            "isReference": true,
+            "type": "Person"
+          },
+          {
+            "children": {
+              "type": "String"
+            },
+            "fieldName": "roles",
+            "kind": "List"
+          }
+        ],
+        "kind": "Type",
+        "name": "ProjectMember",
+        "originalName": "projectMember",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "description": "Document ID",
+            "fieldName": "_id",
+            "isNullable": false,
+            "type": "ID"
+          },
+          {
+            "description": "Document type",
+            "fieldName": "_type",
+            "isNullable": false,
+            "type": "String"
+          },
+          {
+            "description": "Date the document was created",
+            "fieldName": "_createdAt",
+            "isNullable": false,
+            "type": "Datetime"
+          },
+          {
+            "description": "Date the document was last modified",
+            "fieldName": "_updatedAt",
+            "isNullable": false,
+            "type": "Datetime"
+          },
+          {
+            "description": "Current document revision",
+            "fieldName": "_rev",
+            "isNullable": false,
+            "type": "String"
+          },
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "title",
+            "type": "String"
+          },
+          {
+            "fieldName": "description",
+            "type": "Text"
+          },
+          {
+            "children": {
+              "type": "String"
+            },
+            "fieldName": "keywords",
+            "kind": "List"
+          },
+          {
+            "fieldName": "author",
+            "type": "String"
+          }
+        ],
+        "interfaces": ["Document"],
+        "kind": "Type",
+        "name": "SiteSettings",
+        "originalName": "siteSettings",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "fieldName": "title",
+            "type": "String"
+          },
+          {
+            "children": {
+              "type": "Image"
+            },
+            "fieldName": "slides",
+            "kind": "List"
+          }
+        ],
+        "kind": "Type",
+        "name": "Slideshow",
+        "originalName": "slideshow",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "fieldName": "current",
+            "type": "String"
+          }
+        ],
+        "kind": "Type",
+        "name": "Slug",
+        "originalName": "slug",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "fieldName": "lat",
+            "type": "Float"
+          },
+          {
+            "fieldName": "lng",
+            "type": "Float"
+          },
+          {
+            "fieldName": "alt",
+            "type": "Float"
+          }
+        ],
+        "kind": "Type",
+        "name": "Geopoint",
+        "originalName": "geopoint",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "description": "Document ID",
+            "fieldName": "_id",
+            "isNullable": false,
+            "type": "ID"
+          },
+          {
+            "description": "Document type",
+            "fieldName": "_type",
+            "isNullable": false,
+            "type": "String"
+          },
+          {
+            "description": "Date the document was created",
+            "fieldName": "_createdAt",
+            "isNullable": false,
+            "type": "Datetime"
+          },
+          {
+            "description": "Date the document was last modified",
+            "fieldName": "_updatedAt",
+            "isNullable": false,
+            "type": "Datetime"
+          },
+          {
+            "description": "Current document revision",
+            "fieldName": "_rev",
+            "isNullable": false,
+            "type": "String"
+          },
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "originalFilename",
+            "type": "String"
+          },
+          {
+            "fieldName": "label",
+            "type": "String"
+          },
+          {
+            "fieldName": "sha1hash",
+            "type": "String"
+          },
+          {
+            "fieldName": "extension",
+            "type": "String"
+          },
+          {
+            "fieldName": "mimeType",
+            "type": "String"
+          },
+          {
+            "fieldName": "size",
+            "type": "Float"
+          },
+          {
+            "fieldName": "assetId",
+            "type": "String"
+          },
+          {
+            "fieldName": "path",
+            "type": "String"
+          },
+          {
+            "fieldName": "url",
+            "type": "String"
+          },
+          {
+            "fieldName": "metadata",
+            "type": "SanityImageMetadata"
+          }
+        ],
+        "interfaces": ["Document"],
+        "kind": "Type",
+        "name": "SanityImageAsset",
+        "originalName": "sanity.imageAsset",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "description": "Document ID",
+            "fieldName": "_id",
+            "isNullable": false,
+            "type": "ID"
+          },
+          {
+            "description": "Document type",
+            "fieldName": "_type",
+            "isNullable": false,
+            "type": "String"
+          },
+          {
+            "description": "Date the document was created",
+            "fieldName": "_createdAt",
+            "isNullable": false,
+            "type": "Datetime"
+          },
+          {
+            "description": "Date the document was last modified",
+            "fieldName": "_updatedAt",
+            "isNullable": false,
+            "type": "Datetime"
+          },
+          {
+            "description": "Current document revision",
+            "fieldName": "_rev",
+            "isNullable": false,
+            "type": "String"
+          },
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "originalFilename",
+            "type": "String"
+          },
+          {
+            "fieldName": "label",
+            "type": "String"
+          },
+          {
+            "fieldName": "sha1hash",
+            "type": "String"
+          },
+          {
+            "fieldName": "extension",
+            "type": "String"
+          },
+          {
+            "fieldName": "mimeType",
+            "type": "String"
+          },
+          {
+            "fieldName": "size",
+            "type": "Float"
+          },
+          {
+            "fieldName": "assetId",
+            "type": "String"
+          },
+          {
+            "fieldName": "path",
+            "type": "String"
+          },
+          {
+            "fieldName": "url",
+            "type": "String"
+          }
+        ],
+        "interfaces": ["Document"],
+        "kind": "Type",
+        "name": "SanityFileAsset",
+        "originalName": "sanity.fileAsset",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "fieldName": "top",
+            "type": "Float"
+          },
+          {
+            "fieldName": "bottom",
+            "type": "Float"
+          },
+          {
+            "fieldName": "left",
+            "type": "Float"
+          },
+          {
+            "fieldName": "right",
+            "type": "Float"
+          }
+        ],
+        "kind": "Type",
+        "name": "SanityImageCrop",
+        "originalName": "sanity.imageCrop",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "fieldName": "x",
+            "type": "Float"
+          },
+          {
+            "fieldName": "y",
+            "type": "Float"
+          },
+          {
+            "fieldName": "height",
+            "type": "Float"
+          },
+          {
+            "fieldName": "width",
+            "type": "Float"
+          }
+        ],
+        "kind": "Type",
+        "name": "SanityImageHotspot",
+        "originalName": "sanity.imageHotspot",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "fieldName": "location",
+            "type": "Geopoint"
+          },
+          {
+            "fieldName": "dimensions",
+            "type": "SanityImageDimensions"
+          },
+          {
+            "fieldName": "palette",
+            "type": "SanityImagePalette"
+          },
+          {
+            "fieldName": "lqip",
+            "type": "String"
+          },
+          {
+            "fieldName": "hasAlpha",
+            "type": "Boolean"
+          },
+          {
+            "fieldName": "isOpaque",
+            "type": "Boolean"
+          }
+        ],
+        "kind": "Type",
+        "name": "SanityImageMetadata",
+        "originalName": "sanity.imageMetadata",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "fieldName": "height",
+            "type": "Float"
+          },
+          {
+            "fieldName": "width",
+            "type": "Float"
+          },
+          {
+            "fieldName": "aspectRatio",
+            "type": "Float"
+          }
+        ],
+        "kind": "Type",
+        "name": "SanityImageDimensions",
+        "originalName": "sanity.imageDimensions",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "fieldName": "darkMuted",
+            "type": "SanityImagePaletteSwatch"
+          },
+          {
+            "fieldName": "lightVibrant",
+            "type": "SanityImagePaletteSwatch"
+          },
+          {
+            "fieldName": "darkVibrant",
+            "type": "SanityImagePaletteSwatch"
+          },
+          {
+            "fieldName": "vibrant",
+            "type": "SanityImagePaletteSwatch"
+          },
+          {
+            "fieldName": "dominant",
+            "type": "SanityImagePaletteSwatch"
+          },
+          {
+            "fieldName": "lightMuted",
+            "type": "SanityImagePaletteSwatch"
+          },
+          {
+            "fieldName": "muted",
+            "type": "SanityImagePaletteSwatch"
+          }
+        ],
+        "kind": "Type",
+        "name": "SanityImagePalette",
+        "originalName": "sanity.imagePalette",
+        "type": "Object"
+      },
+      {
+        "fields": [
+          {
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "fieldName": "background",
+            "type": "String"
+          },
+          {
+            "fieldName": "foreground",
+            "type": "String"
+          },
+          {
+            "fieldName": "population",
+            "type": "Float"
+          },
+          {
+            "fieldName": "title",
+            "type": "String"
+          }
+        ],
+        "kind": "Type",
+        "name": "SanityImagePaletteSwatch",
+        "originalName": "sanity.imagePaletteSwatch",
+        "type": "Object"
+      },
+      {
+        "kind": "Union",
+        "name": "BlockOrFigureOrSlideshow",
+        "types": ["Block", "Figure", "Slideshow"]
+      },
+      {
+        "fields": [
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_id"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_id",
+            "type": "ID"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_id"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_id_not",
+            "type": "ID"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_id"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_id_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_id"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_id_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_id"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_id_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_type"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_type"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_type_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_type"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_type_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_type"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_type_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_type"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_type_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_createdAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_createdAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_createdAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_createdAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "_createdAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "_createdAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "_createdAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "_createdAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "_createdAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "_createdAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "_createdAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "_createdAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_updatedAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_updatedAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_updatedAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_updatedAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "_updatedAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "_updatedAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "_updatedAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "_updatedAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_rev"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_rev",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_rev"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_rev_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_rev"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_rev_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_rev"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_rev_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_rev"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_rev_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_key"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_key"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_key_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_key"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_key_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_key"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_key_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_key"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_key_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "title"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "title",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "title"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "title_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "title"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "title_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "title"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "title_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "title"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "title_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "IS_DRAFT",
+              "field": "_id"
+            },
+            "description": "All documents that are drafts",
+            "fieldName": "is_draft",
+            "type": "Boolean"
+          }
+        ],
+        "kind": "InputObject",
+        "name": "CategoryFilter"
+      },
+      {
+        "fields": [
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_id"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_id",
+            "type": "ID"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_id"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_id_not",
+            "type": "ID"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_id"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_id_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_id"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_id_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_id"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_id_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_type"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_type"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_type_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_type"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_type_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_type"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_type_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_type"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_type_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_createdAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_createdAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_createdAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_createdAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "_createdAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "_createdAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "_createdAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "_createdAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "_createdAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "_createdAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "_createdAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "_createdAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_updatedAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_updatedAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_updatedAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_updatedAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "_updatedAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "_updatedAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "_updatedAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "_updatedAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_rev"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_rev",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_rev"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_rev_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_rev"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_rev_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_rev"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_rev_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_rev"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_rev_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_key"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_key"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_key_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_key"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_key_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_key"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_key_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_key"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_key_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "name"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "name",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "name"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "name_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "name"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "name_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "name"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "name_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "name"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "name_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "address1"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "address1",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "address1"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "address1_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "address1"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "address1_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "address1"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "address1_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "address1"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "address1_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "address2"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "address2",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "address2"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "address2_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "address2"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "address2_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "address2"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "address2_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "address2"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "address2_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "zipCode"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "zipCode",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "zipCode"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "zipCode_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "zipCode"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "zipCode_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "zipCode"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "zipCode_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "zipCode"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "zipCode_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "city"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "city",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "city"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "city_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "city"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "city_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "city"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "city_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "city"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "city_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "country"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "country",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "country"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "country_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "country"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "country_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "country"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "country_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "country"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "country_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "IS_DRAFT",
+              "field": "_id"
+            },
+            "description": "All documents that are drafts",
+            "fieldName": "is_draft",
+            "type": "Boolean"
+          }
+        ],
+        "kind": "InputObject",
+        "name": "CompanyInfoFilter"
+      },
+      {
+        "fields": [
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_id"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_id",
+            "type": "ID"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_id"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_id_not",
+            "type": "ID"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_id"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_id_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_id"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_id_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_id"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_id_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_type"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_type"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_type_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_type"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_type_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_type"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_type_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_type"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_type_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_createdAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_createdAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_createdAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_createdAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "_createdAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "_createdAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "_createdAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "_createdAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "_createdAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "_createdAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "_createdAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "_createdAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_updatedAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_updatedAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_updatedAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_updatedAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "_updatedAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "_updatedAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "_updatedAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "_updatedAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_rev"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_rev",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_rev"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_rev_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_rev"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_rev_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_rev"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_rev_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_rev"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_rev_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_key"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_key"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_key_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_key"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_key_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_key"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_key_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_key"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_key_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "title"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "title",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "title"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "title_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "title"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "title_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "title"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "title_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "title"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "title_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "IS_DRAFT",
+              "field": "_id"
+            },
+            "description": "All documents that are drafts",
+            "fieldName": "is_draft",
+            "type": "Boolean"
+          }
+        ],
+        "kind": "InputObject",
+        "name": "PageFilter"
+      },
+      {
+        "fields": [
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_id"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_id",
+            "type": "ID"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_id"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_id_not",
+            "type": "ID"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_id"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_id_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_id"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_id_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_id"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_id_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_type"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_type"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_type_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_type"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_type_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_type"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_type_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_type"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_type_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_createdAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_createdAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_createdAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_createdAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "_createdAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "_createdAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "_createdAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "_createdAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "_createdAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "_createdAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "_createdAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "_createdAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_updatedAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_updatedAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_updatedAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_updatedAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "_updatedAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "_updatedAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "_updatedAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "_updatedAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_rev"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_rev",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_rev"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_rev_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_rev"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_rev_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_rev"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_rev_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_rev"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_rev_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_key"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_key"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_key_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_key"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_key_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_key"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_key_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_key"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_key_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "name"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "name",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "name"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "name_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "name"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "name_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "name"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "name_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "name"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "name_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "IS_DRAFT",
+              "field": "_id"
+            },
+            "description": "All documents that are drafts",
+            "fieldName": "is_draft",
+            "type": "Boolean"
+          }
+        ],
+        "kind": "InputObject",
+        "name": "PersonFilter"
+      },
+      {
+        "fields": [
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_id"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_id",
+            "type": "ID"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_id"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_id_not",
+            "type": "ID"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_id"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_id_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_id"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_id_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_id"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_id_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_type"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_type"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_type_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_type"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_type_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_type"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_type_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_type"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_type_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_createdAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_createdAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_createdAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_createdAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "_createdAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "_createdAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "_createdAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "_createdAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "_createdAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "_createdAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "_createdAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "_createdAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_updatedAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_updatedAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_updatedAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_updatedAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "_updatedAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "_updatedAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "_updatedAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "_updatedAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_rev"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_rev",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_rev"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_rev_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_rev"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_rev_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_rev"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_rev_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_rev"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_rev_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_key"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_key"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_key_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_key"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_key_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_key"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_key_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_key"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_key_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "title"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "title",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "title"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "title_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "title"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "title_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "title"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "title_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "title"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "title_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "publishedAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "publishedAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "publishedAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "publishedAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "publishedAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "publishedAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "publishedAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "publishedAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "publishedAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "publishedAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "publishedAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "publishedAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "IS_DRAFT",
+              "field": "_id"
+            },
+            "description": "All documents that are drafts",
+            "fieldName": "is_draft",
+            "type": "Boolean"
+          }
+        ],
+        "kind": "InputObject",
+        "name": "PostFilter"
+      },
+      {
+        "fields": [
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_id"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_id",
+            "type": "ID"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_id"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_id_not",
+            "type": "ID"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_id"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_id_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_id"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_id_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_id"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_id_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_type"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_type"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_type_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_type"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_type_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_type"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_type_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_type"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_type_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_createdAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_createdAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_createdAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_createdAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "_createdAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "_createdAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "_createdAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "_createdAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "_createdAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "_createdAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "_createdAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "_createdAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_updatedAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_updatedAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_updatedAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_updatedAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "_updatedAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "_updatedAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "_updatedAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "_updatedAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_rev"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_rev",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_rev"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_rev_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_rev"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_rev_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_rev"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_rev_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_rev"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_rev_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_key"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_key"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_key_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_key"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_key_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_key"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_key_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_key"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_key_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "title"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "title",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "title"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "title_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "title"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "title_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "title"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "title_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "title"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "title_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "publishedAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "publishedAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "publishedAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "publishedAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "publishedAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "publishedAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "publishedAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "publishedAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "publishedAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "publishedAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "publishedAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "publishedAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "startedAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "startedAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "startedAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "startedAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "startedAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "startedAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "startedAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "startedAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "startedAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "startedAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "startedAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "startedAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "endedAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "endedAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "endedAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "endedAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "endedAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "endedAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "endedAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "endedAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "endedAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "endedAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "endedAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "endedAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "IS_DRAFT",
+              "field": "_id"
+            },
+            "description": "All documents that are drafts",
+            "fieldName": "is_draft",
+            "type": "Boolean"
+          }
+        ],
+        "kind": "InputObject",
+        "name": "ProjectFilter"
+      },
+      {
+        "fields": [
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_id"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_id",
+            "type": "ID"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_id"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_id_not",
+            "type": "ID"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_id"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_id_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_id"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_id_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_id"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_id_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_type"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_type"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_type_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_type"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_type_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_type"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_type_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_type"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_type_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_createdAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_createdAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_createdAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_createdAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "_createdAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "_createdAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "_createdAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "_createdAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "_createdAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "_createdAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "_createdAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "_createdAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_updatedAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_updatedAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_updatedAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_updatedAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "_updatedAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "_updatedAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "_updatedAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "_updatedAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_rev"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_rev",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_rev"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_rev_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_rev"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_rev_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_rev"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_rev_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_rev"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_rev_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_key"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_key"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_key_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_key"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_key_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_key"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_key_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_key"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_key_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "title"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "title",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "title"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "title_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "title"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "title_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "title"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "title_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "title"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "title_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "author"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "author",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "author"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "author_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "author"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "author_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "author"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "author_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "author"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "author_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "IS_DRAFT",
+              "field": "_id"
+            },
+            "description": "All documents that are drafts",
+            "fieldName": "is_draft",
+            "type": "Boolean"
+          }
+        ],
+        "kind": "InputObject",
+        "name": "SiteSettingsFilter"
+      },
+      {
+        "fields": [
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_id"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_id",
+            "type": "ID"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_id"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_id_not",
+            "type": "ID"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_id"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_id_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_id"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_id_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_id"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_id_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_type"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_type"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_type_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_type"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_type_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_type"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_type_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_type"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_type_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_createdAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_createdAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_createdAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_createdAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "_createdAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "_createdAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "_createdAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "_createdAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "_createdAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "_createdAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "_createdAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "_createdAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_updatedAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_updatedAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_updatedAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_updatedAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "_updatedAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "_updatedAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "_updatedAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "_updatedAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_rev"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_rev",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_rev"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_rev_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_rev"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_rev_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_rev"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_rev_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_rev"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_rev_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_key"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_key"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_key_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_key"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_key_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_key"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_key_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_key"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_key_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "originalFilename"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "originalFilename",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "originalFilename"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "originalFilename_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "originalFilename"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "originalFilename_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "originalFilename"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "originalFilename_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "originalFilename"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "originalFilename_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "label"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "label",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "label"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "label_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "label"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "label_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "label"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "label_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "label"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "label_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "sha1hash"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "sha1hash",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "sha1hash"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "sha1hash_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "sha1hash"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "sha1hash_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "sha1hash"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "sha1hash_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "sha1hash"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "sha1hash_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "extension"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "extension",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "extension"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "extension_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "extension"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "extension_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "extension"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "extension_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "extension"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "extension_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "mimeType"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "mimeType",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "mimeType"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "mimeType_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "mimeType"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "mimeType_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "mimeType"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "mimeType_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "mimeType"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "mimeType_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "size"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "size",
+            "type": "Float"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "size"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "size_not",
+            "type": "Float"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "size"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "size_lt",
+            "type": "Float"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "size"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "size_lte",
+            "type": "Float"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "size"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "size_gt",
+            "type": "Float"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "size"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "size_gte",
+            "type": "Float"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "assetId"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "assetId",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "assetId"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "assetId_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "assetId"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "assetId_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "assetId"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "assetId_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "assetId"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "assetId_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "path"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "path",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "path"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "path_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "path"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "path_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "path"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "path_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "path"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "path_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "url"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "url",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "url"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "url_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "url"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "url_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "url"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "url_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "url"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "url_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "IS_DRAFT",
+              "field": "_id"
+            },
+            "description": "All documents that are drafts",
+            "fieldName": "is_draft",
+            "type": "Boolean"
+          }
+        ],
+        "kind": "InputObject",
+        "name": "SanityImageAssetFilter"
+      },
+      {
+        "fields": [
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_id"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_id",
+            "type": "ID"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_id"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_id_not",
+            "type": "ID"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_id"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_id_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_id"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_id_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_id"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_id_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_type"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_type",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_type"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_type_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_type"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_type_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_type"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_type_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_type"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_type_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_createdAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_createdAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_createdAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_createdAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "_createdAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "_createdAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "_createdAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "_createdAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "_createdAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "_createdAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "_createdAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "_createdAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_updatedAt"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_updatedAt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_updatedAt"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_updatedAt_not",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "_updatedAt_lt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "_updatedAt_lte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "_updatedAt_gt",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "_updatedAt"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "_updatedAt_gte",
+            "type": "Datetime"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_rev"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_rev",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_rev"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_rev_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_rev"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_rev_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_rev"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_rev_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_rev"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_rev_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "_key"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "_key",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "_key"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "_key_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "_key"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "_key_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "_key"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "_key_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "_key"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "_key_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "originalFilename"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "originalFilename",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "originalFilename"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "originalFilename_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "originalFilename"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "originalFilename_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "originalFilename"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "originalFilename_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "originalFilename"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "originalFilename_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "label"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "label",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "label"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "label_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "label"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "label_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "label"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "label_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "label"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "label_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "sha1hash"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "sha1hash",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "sha1hash"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "sha1hash_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "sha1hash"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "sha1hash_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "sha1hash"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "sha1hash_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "sha1hash"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "sha1hash_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "extension"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "extension",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "extension"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "extension_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "extension"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "extension_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "extension"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "extension_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "extension"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "extension_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "mimeType"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "mimeType",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "mimeType"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "mimeType_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "mimeType"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "mimeType_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "mimeType"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "mimeType_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "mimeType"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "mimeType_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "size"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "size",
+            "type": "Float"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "size"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "size_not",
+            "type": "Float"
+          },
+          {
+            "constraint": {
+              "comparator": "LT",
+              "field": "size"
+            },
+            "description": "All documents are less than given value",
+            "fieldName": "size_lt",
+            "type": "Float"
+          },
+          {
+            "constraint": {
+              "comparator": "LTE",
+              "field": "size"
+            },
+            "description": "All documents are less than or equal to given value",
+            "fieldName": "size_lte",
+            "type": "Float"
+          },
+          {
+            "constraint": {
+              "comparator": "GT",
+              "field": "size"
+            },
+            "description": "All documents are greater than given value",
+            "fieldName": "size_gt",
+            "type": "Float"
+          },
+          {
+            "constraint": {
+              "comparator": "GTE",
+              "field": "size"
+            },
+            "description": "All documents are greater than or equal to given value",
+            "fieldName": "size_gte",
+            "type": "Float"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "assetId"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "assetId",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "assetId"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "assetId_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "assetId"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "assetId_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "assetId"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "assetId_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "assetId"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "assetId_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "path"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "path",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "path"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "path_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "path"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "path_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "path"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "path_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "path"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "path_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "EQUALS",
+              "field": "url"
+            },
+            "description": "All documents that are equal to given value",
+            "fieldName": "url",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "NOT_EQUALS",
+              "field": "url"
+            },
+            "description": "All documents that are not equal to given value",
+            "fieldName": "url_not",
+            "type": "String"
+          },
+          {
+            "constraint": {
+              "comparator": "MATCHES",
+              "field": "url"
+            },
+            "description": "All documents contain (match) the given word/words",
+            "fieldName": "url_matches",
+            "type": "String"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "IN",
+              "field": "url"
+            },
+            "description": "All documents match one of the given values",
+            "fieldName": "url_in",
+            "kind": "List"
+          },
+          {
+            "children": {
+              "isNullable": false,
+              "type": "String"
+            },
+            "constraint": {
+              "comparator": "NOT_IN",
+              "field": "url"
+            },
+            "description": "None of the values match any of the given values",
+            "fieldName": "url_not_in",
+            "kind": "List"
+          },
+          {
+            "constraint": {
+              "comparator": "IS_DRAFT",
+              "field": "_id"
+            },
+            "description": "All documents that are drafts",
+            "fieldName": "is_draft",
+            "type": "Boolean"
+          }
+        ],
+        "kind": "InputObject",
+        "name": "SanityFileAssetFilter"
+      }
+    ]
+  }
+}
