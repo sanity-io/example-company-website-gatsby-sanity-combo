@@ -4,6 +4,7 @@ import { FaFile } from "react-icons/fa";
 import client from "part:@sanity/base/client";
 import locationStore from "part:@sanity/base/location";
 import { map } from "rxjs/operators";
+import { FiInbox, FiDatabase, FiLayers, FiCheck } from "react-icons/fi";
 
 const hiddenTypes = [
   "category",
@@ -42,8 +43,71 @@ const webriqsandbox = S.list()
       .child(S.documentTypeList("project")),
     S.listItem()
       .title("Blog posts")
-      .schemaType("post")
-      .child(S.documentTypeList("post").title("Blog posts")),
+      .child(
+        S.list()
+          .title("Status")
+          .items([
+            S.listItem()
+              .title("Drafts")
+              .icon(FiInbox)
+              .schemaType("post")
+              .child(
+                S.documentTypeList("post")
+                  .title("Drafts")
+                  .filter(
+                    "_type == $type && (defined(isReady) && isReady == $isReady) && _id in path('drafts.**')"
+                  )
+                  .params({
+                    type: "post",
+                    isReady: false,
+                    state: "drafts"
+                  })
+              ),
+            S.listItem()
+              .title("All Posts")
+              .icon(FiDatabase)
+              .schemaType("post")
+              .child(
+                S.documentTypeList("post")
+                  .title("All Posts")
+                  .filter("_type == $type && defined(isReady)")
+                  .params({
+                    type: "post"
+                  })
+              ),
+            S.listItem()
+              .title("Ready to Publish")
+              .icon(FiCheck)
+              .schemaType("post")
+              .child(
+                S.documentTypeList("post")
+                  .title("Ready to Publish")
+                  .filter(
+                    "_type == $type && (defined(isReady) && isReady == $isReady) && _id in path('drafts.**')"
+                  )
+                  .params({
+                    type: "post",
+                    isReady: true,
+                    state: "drafts"
+                  })
+              ),
+            S.listItem()
+              .title("Published")
+              .icon(FiLayers)
+              .schemaType("post")
+              .child(
+                S.documentTypeList("post")
+                  .title("Published")
+                  .filter(
+                    "_type == $type && (defined(isReady) && isReady == $isReady) && !(_id in path('drafts.**'))"
+                  )
+                  .params({
+                    type: "post",
+                    isReady: true
+                  })
+              )
+          ])
+      ),
     S.listItem()
       .title("Pages")
       .child(
