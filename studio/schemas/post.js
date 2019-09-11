@@ -50,22 +50,6 @@ export default {
       name: "body",
       title: "Body",
       type: "blockContent"
-    },
-    {
-      name: "isReady",
-      type: "boolean",
-      title: "Ready To Publish?",
-      description:
-        "Toggle on so you can pick it up later and publish. Removes item from being RAW.",
-      validation: Rule =>
-        Rule.required().error("Set to ready so you can publish or pick it up later!")
-    },
-    {
-      name: "isDiscarded",
-      type: "boolean",
-      title: "Move To Trash?",
-      description:
-        "Toggle on so this gets removed from RAW items and will never get inserted back in future scraping activity."
     }
   ],
   orderings: [

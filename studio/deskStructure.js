@@ -48,19 +48,41 @@ const webriqsandbox = S.list()
           .title("Status")
           .items([
             S.listItem()
+              .title("Published")
+              .icon(FiLayers)
+              .schemaType("post")
+              .child(
+                S.documentTypeList("post")
+                  .title("Published")
+                  .filter("_type == $type && !(_id in path('drafts.**'))")
+                  .params({
+                    type: "post"
+                  })
+              ),
+            S.listItem()
               .title("Drafts")
               .icon(FiInbox)
               .schemaType("post")
               .child(
                 S.documentTypeList("post")
                   .title("Drafts")
-                  .filter(
-                    "_type == $type && (defined(isReady) && isReady == $isReady) && _id in path('drafts.**')"
-                  )
+                  .filter("_type == $type && _id in path('drafts.**') && !defined(publishedAt)")
                   .params({
                     type: "post",
-                    isReady: false,
                     state: "drafts"
+                  })
+              ),
+            S.listItem()
+              .title("Unpublished")
+              .icon(FiCheck)
+              .schemaType("post")
+              .child(
+                S.documentTypeList("post")
+                  .title("Unpublished")
+                  .filter("_type == $type && _id in path('drafts.**') && defined(publishedAt)")
+                  .params({
+                    type: "post",
+                    state: "awaiting"
                   })
               ),
             S.listItem()
@@ -70,40 +92,9 @@ const webriqsandbox = S.list()
               .child(
                 S.documentTypeList("post")
                   .title("All Posts")
-                  .filter("_type == $type && defined(isReady)")
+                  .filter("_type == $type")
                   .params({
                     type: "post"
-                  })
-              ),
-            S.listItem()
-              .title("Ready to Publish")
-              .icon(FiCheck)
-              .schemaType("post")
-              .child(
-                S.documentTypeList("post")
-                  .title("Ready to Publish")
-                  .filter(
-                    "_type == $type && (defined(isReady) && isReady == $isReady) && _id in path('drafts.**')"
-                  )
-                  .params({
-                    type: "post",
-                    isReady: true,
-                    state: "drafts"
-                  })
-              ),
-            S.listItem()
-              .title("Published")
-              .icon(FiLayers)
-              .schemaType("post")
-              .child(
-                S.documentTypeList("post")
-                  .title("Published")
-                  .filter(
-                    "_type == $type && (defined(isReady) && isReady == $isReady) && !(_id in path('drafts.**'))"
-                  )
-                  .params({
-                    type: "post",
-                    isReady: true
                   })
               )
           ])
