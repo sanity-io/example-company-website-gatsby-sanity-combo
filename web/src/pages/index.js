@@ -51,7 +51,11 @@ export const query = graphql`
       }
     }
 
-    posts: allSanityPost(limit: 6, sort: { fields: [publishedAt], order: DESC }) {
+    posts: allSanityPost(
+      limit: 6
+      sort: { fields: [publishedAt], order: DESC }
+      filter: { _id: { regex: "/^((?!drafts).)*$/" } }
+    ) {
       edges {
         node {
           id
@@ -121,16 +125,16 @@ const IndexPage = props => {
         <h1 hidden>Welcome to {site.title}</h1>
         {projectNodes && (
           <ProjectPreviewGrid
-            title='Latest projects'
+            title="Latest projects"
             nodes={projectNodes}
-            browseMoreHref='/projects/'
+            browseMoreHref="/projects/"
           />
         )}
         {postNodes && (
           <BlogPostPreviewGrid
-            title='Latest blog posts'
+            title="Latest blog posts"
             nodes={postNodes}
-            browseMoreHref='/blog/'
+            browseMoreHref="/blog/"
           />
         )}
       </Container>
