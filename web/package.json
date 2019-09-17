@@ -3,6 +3,9 @@
   "name": "example-company-website-gatsby-sanity-combo-frontend",
   "version": "1.0.0",
   "author": "Sanity <hello@sanity.io>",
+  "engines": {
+    "node": "^10"
+  },
   "scripts": {
     "build": "gatsby build",
     "deploy": "npm run now-deploy",
@@ -17,17 +20,17 @@
   },
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.6",
-    "@sanity/image-url": "^0.140.12",
+    "@sanity/image-url": "^0.140.14",
     "date-fns": "^1.30.1",
-    "dotenv": "^8.0.0",
-    "gatsby": "^2.8.2",
-    "gatsby-plugin-postcss": "^2.0.7",
-    "gatsby-plugin-react-helmet": "^3.0.12",
-    "gatsby-source-sanity": "^4.0.1",
+    "dotenv": "^8.1.0",
+    "gatsby": "^2.15.16",
+    "gatsby-plugin-postcss": "^2.1.7",
+    "gatsby-plugin-react-helmet": "^3.1.7",
+    "gatsby-source-sanity": "^5.0.2",
     "postcss-import": "^12.0.1",
-    "postcss-preset-env": "^6.6.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "postcss-preset-env": "^6.7.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
