@@ -4,8 +4,7 @@
   "version": "1.0.0",
   "author": "Sanity <hello@sanity.io>",
   "engines": {
-    "node": "12",
-    "npm": "6"
+    "node": "10.x"
   },
   "scripts": {
     "deploy": "npm run graphql-deploy && npm run sanity-deploy",

@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Sanity <hello@sanity.io>",
   "engines": {
-    "node": "^10"
+    "node": "10.x"
   },
   "scripts": {
     "clean": "lerna clean",
