@@ -11,7 +11,11 @@ import { responsiveTitle1 } from '../components/typography.module.css'
 
 export const query = graphql`
   query BlogPageQuery {
-    posts: allSanityPost(limit: 12, sort: { fields: [publishedAt], order: DESC }) {
+    posts: allSanityPost(
+      limit: 12
+      sort: { fields: [publishedAt], order: DESC }
+      filter: { _id: { regex: "/^((?!drafts).)*$/" } }
+    ) {
       edges {
         node {
           id
@@ -48,7 +52,7 @@ const BlogPage = props => {
 
   return (
     <Layout>
-      <SEO title='Blog' />
+      <SEO title="Blog" />
       <Container>
         <h1 className={responsiveTitle1}>Blog</h1>
         {postNodes && postNodes.length > 0 && <BlogPostPreviewGrid nodes={postNodes} />}
