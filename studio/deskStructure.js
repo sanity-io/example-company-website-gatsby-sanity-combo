@@ -60,29 +60,29 @@ const webriqsandbox = S.list()
                   })
               ),
             S.listItem()
-              .title("Drafts")
+              .title("Drafts/Not Published")
               .icon(FiInbox)
               .schemaType("post")
               .child(
                 S.documentTypeList("post")
                   .title("Drafts")
-                  .filter("_type == $type && _id in path('drafts.**') && !defined(publishedAt)")
+                  .filter("_type == $type && _id in path('drafts.**') && !defined(isUnPublished)")
                   .params({
                     type: "post",
                     state: "drafts"
                   })
               ),
             S.listItem()
-              .title("Unpublished")
-              .icon(FiCheck)
+              .title("Unpublished/Previously Published")
+              .icon(FiInbox)
               .schemaType("post")
               .child(
                 S.documentTypeList("post")
                   .title("Unpublished")
-                  .filter("_type == $type && _id in path('drafts.**') && defined(publishedAt)")
+                  .filter("_type == $type && _id in path('drafts.**') && defined(isUnPublished)")
                   .params({
                     type: "post",
-                    state: "awaiting"
+                    state: "drafts"
                   })
               ),
             S.listItem()

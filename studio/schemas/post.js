@@ -50,6 +50,12 @@ export default {
       name: "body",
       title: "Body",
       type: "blockContent"
+    },
+    {
+      name: "isUnPublished",
+      title: "Un Published",
+      type: "boolean",
+      hidden: true
     }
   ],
   orderings: [
