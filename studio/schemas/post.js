@@ -52,20 +52,21 @@ export default {
       type: "blockContent"
     },
     {
-      name: "isUnPublished",
-      title: "Un Published",
+      name: "hasBeenPublished",
+      title: "Has Been Published",
       type: "boolean",
-      hidden: true
+      hidden: true,
+      default: false
     }
   ],
   orderings: [
     {
-      title: "Publishing date new–>old",
+      title: "Publishing date new –> old",
       name: "publishingDateAsc",
       by: [{ field: "publishedAt", direction: "asc" }, { field: "title", direction: "asc" }]
     },
     {
-      title: "Publishing date old->new",
+      title: "Publishing date old -> new",
       name: "publishingDateDesc",
       by: [{ field: "publishedAt", direction: "desc" }, { field: "title", direction: "asc" }]
     }
