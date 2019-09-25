@@ -54,7 +54,7 @@ export const query = graphql`
     posts: allSanityPost(
       limit: 6
       sort: { fields: [publishedAt], order: DESC }
-      filter: { _id: { regex: "/^((?!drafts).)*$/" } }
+      filter: { hasBeenPublished: { eq: true } }
     ) {
       edges {
         node {
