@@ -19,7 +19,7 @@
     "test": "sanity check"
   },
   "dependencies": {
-    "@sanity/base": "^0.142.6",
+    "@sanity/base": "^0.142.10",
     "@sanity/cli": "^0.142.2",
     "@sanity/components": "^0.142.6",
     "@sanity/core": "^0.142.6",
