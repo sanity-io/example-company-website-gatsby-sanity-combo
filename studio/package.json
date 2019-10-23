@@ -27,7 +27,7 @@
     "@sanity/default-login": "^0.142.6",
     "@sanity/desk-tool": "^0.142.10",
     "prop-types": "^15.7.2",
-    "react": "^16.10.2",
+    "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-icons": "^3.7.0"
   },
