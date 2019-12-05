@@ -20,21 +20,21 @@
   },
   "dependencies": {
     "@sanity/base": "^0.146.3",
-    "@sanity/cli": "^0.142.2",
+    "@sanity/cli": "^0.146.0",
     "@sanity/components": "^0.146.3",
     "@sanity/core": "^0.146.0",
-    "@sanity/default-layout": "^0.142.10",
+    "@sanity/default-layout": "^0.146.3",
     "@sanity/default-login": "^0.146.0",
-    "@sanity/desk-tool": "^0.142.10",
+    "@sanity/desk-tool": "^0.146.3",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-icons": "^3.7.0"
+    "react-icons": "^3.8.0"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-config-standard-react": "^9.0.0",
+    "eslint": "^6.7.2",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-config-standard-react": "^9.2.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-promise": "^4.2.1",
