@@ -4,8 +4,8 @@ export default {
   name: 'companyInfo',
   title: 'Company Info',
   type: 'document',
-  liveEdit: false,
-  __experimental_actions: ['update', 'publish' /* 'create', 'delete' */],
+  // You probably want to uncomment the next line once you've made a companyInfo document in the Studio. This will remove the companyInfo document type from the create-menus.
+  // __experimental_actions: ['update', 'publish', /* 'create', 'delete' */],
   icon: MdBusiness,
   fields: [
     {
