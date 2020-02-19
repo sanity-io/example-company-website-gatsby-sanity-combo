@@ -22,7 +22,7 @@
     "@sanity/base": "^0.147.8",
     "@sanity/cli": "^0.146.0",
     "@sanity/components": "^1.148.1",
-    "@sanity/core": "^1.148.1",
+    "@sanity/core": "^1.148.3",
     "@sanity/default-layout": "^1.148.1",
     "@sanity/default-login": "^1.148.1",
     "@sanity/desk-tool": "^1.148.4",
