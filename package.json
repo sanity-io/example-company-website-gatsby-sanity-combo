@@ -15,6 +15,8 @@
     "graphql-deploy": "lerna run graphql-deploy",
     "lint": "lerna run lint",
     "now-deploy": "now && now alias",
+    "workers-start": "lerna run workers-start",
+    "workers-deploy": "lerna run workers-deploy",
     "postinstall": "lerna bootstrap",
     "sanity-deploy": "lerna run sanity-deploy",
     "start": "lerna run empty-cache && lerna run start --parallel",

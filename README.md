@@ -111,6 +111,13 @@ npm run now-deploy
 >
 > Fork or clone the example to your GitHub account. After adding your repo to Netlify you’ll get automatic builds & deploys when pushing to master. You can also add a [webhook](https://www.sanity.io/docs/webhooks) to get deploys on content changes.
 
+
+**Deploy on Cloudflare:** If you want to deploy the Gatsby site to Cloudflare we added a wrangler.toml and `workers-site/` to both studio and web.
+
+* Follow quickstart for wrangler: https://developers.cloudflare.com/workers/quickstart
+* Edit wrangler.toml's according to where you'd like studio and web to get deployed to
+* Run `npm run worker-deploy`
+
 ## Contributing
 
 1. [Fork it](https://https://github.com/sanity-io/example-company-website-gatsby-sanity-combo/fork)

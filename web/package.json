@@ -13,6 +13,9 @@
     "empty-cache": "gatsby clean",
     "lint": "eslint .",
     "now-build": "npm run build",
+    "workers-build": "npm run build",
+    "workers-start": "npm run build && wrangler preview --watch",
+    "workers-deploy": "npm run build && wrangler publish",
     "now-dev": "npm run build",
     "start": "npm run develop",
     "format": "prettier-eslint --write \"**/*.js\" \"!.cache/**\" \"!node_modules/**\" \"!public/**\"",
@@ -31,7 +34,8 @@
     "postcss-preset-env": "^6.7.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "@cloudflare/wrangler": "^1.8.4"
   },
   "devDependencies": {
     "eslint": "^6.7.2",

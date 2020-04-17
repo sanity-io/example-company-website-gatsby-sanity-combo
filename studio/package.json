@@ -15,6 +15,8 @@
     "start": "sanity start",
     "build": "sanity build",
     "now-build": "npm run build",
+    "workers-start": "npm run build && wrangler preview --watch",
+    "workers-deploy": "npm run build && wrangler publish",
     "now-dev": "npm run build",
     "test": "sanity check"
   },
