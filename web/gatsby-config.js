@@ -31,7 +31,7 @@ module.exports = {
 
 function requireConfig (path) {
   try {
-    return require('../studio/sanity.json')
+    return require(path)
   } catch (e) {
     console.error(
       'Failed to require sanity.json. Fill in projectId and dataset name manually in gatsby-config.js'
