@@ -5,9 +5,9 @@ import { imageUrlFor } from '../../lib/image-url'
 import styles from './slideshow.module.css'
 
 function Slideshow (props) {
+  const [index, setIndex] = useState(0)
   if (!props.slides) return null
   const len = props.slides.length
-  const [index, setIndex] = useState(0)
   function handlePrev () {
     setIndex(Math.max(index - 1, 0))
   }
