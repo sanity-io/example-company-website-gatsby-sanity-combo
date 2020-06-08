@@ -29,6 +29,13 @@ function Activity (props) {
         <div className={styles.grid}>
           <div className={styles.mainContent}>
             <h1 className={styles.title}>{title}</h1>
+            {categories && (
+              <div className={styles.categories}>
+                {categories.map(category => (
+                  <Link to={`/categories/${category.slug.current}`}>{category.title}</Link>
+                ))}
+              </div>
+            )}
             {_rawBody && <BlockContent blocks={_rawBody || []} />}
             {title}
           </div>

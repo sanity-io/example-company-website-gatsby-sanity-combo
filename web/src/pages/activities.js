@@ -45,9 +45,9 @@ const ActivitiesPage = props => {
     data && data.activities && mapEdgesToNodes(data.activities).filter(filterOutDocsWithoutSlugs)
   return (
     <Layout>
-      <SEO title='Places' />
+      <SEO title='Activities' />
       <Container>
-        <h1 className={responsiveTitle1}>Places</h1>
+        <h1 className={responsiveTitle1}>Activities</h1>
         {activityNodes && activityNodes.length > 0 && <ActivityPreviewGrid nodes={activityNodes} />}
       </Container>
     </Layout>
