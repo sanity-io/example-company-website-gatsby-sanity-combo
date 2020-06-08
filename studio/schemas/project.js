@@ -62,8 +62,14 @@ export default {
       type: 'blockContent'
     },
     {
+      name: 'relatedPosts',
+      title: 'Related Posts',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'post' } }]
+    },
+    {
       name: 'relatedProjects',
-      title: 'Related projects',
+      title: 'Related places',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'project' } }]
     }

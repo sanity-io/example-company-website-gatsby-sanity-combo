@@ -10,7 +10,7 @@ import RoleList from './role-list'
 import styles from './project.module.css'
 
 function Project (props) {
-  const { _rawBody, title, categories, mainImage, members, publishedAt, relatedProjects } = props
+  const { _rawBody, title, categories, mainImage, members, publishedAt, relatedProjects, relatedPosts } = props
   return (
     <article className={styles.root}>
       {props.mainImage && mainImage.asset && (
@@ -46,6 +46,16 @@ function Project (props) {
                 <ul>
                   {categories.map(category => (
                     <li key={category._id}>{category.title}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {relatedPosts && (
+              <div className={styles.relatedPosts}>
+                <h3 className={styles.relatedPostsHeadline}>Related Posts</h3>
+                <ul>
+                  {relatedPosts.map(post => (
+                    <li key={post._id}>{post.title}</li>
                   ))}
                 </ul>
               </div>
