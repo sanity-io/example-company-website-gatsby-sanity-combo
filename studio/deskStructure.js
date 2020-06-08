@@ -2,7 +2,7 @@ import S from '@sanity/desk-tool/structure-builder'
 import { MdBusiness, MdSettings } from 'react-icons/md'
 import { FaFile } from 'react-icons/fa'
 
-const hiddenTypes = ['category', 'companyInfo', 'page', 'person', 'post', 'project', 'siteSettings']
+const hiddenTypes = ['category', 'companyInfo', 'page', 'person', 'post', 'project', 'siteSettings', 'activity']
 
 export default () =>
   S.list()
@@ -27,9 +27,9 @@ export default () =>
         )
         .icon(MdBusiness),
       S.listItem()
-        .title('Projects')
+        .title('Places')
         .schemaType('project')
-        .child(S.documentTypeList('project')),
+        .child(S.documentTypeList('project').title('Places')),
       S.listItem()
         .title('Blog posts')
         .schemaType('post')
@@ -61,12 +61,16 @@ export default () =>
             ])
         ),
       S.listItem()
+        .title('Activity')
+        .schemaType('person')
+        .child(S.documentTypeList('activity').title('Activity')),
+      S.listItem()
         .title('People')
         .schemaType('person')
         .child(S.documentTypeList('person').title('People')),
       S.listItem()
-        .title('Categories')
+        .title('Countries')
         .schemaType('category')
-        .child(S.documentTypeList('category').title('Categories')),
+        .child(S.documentTypeList('category').title('Countries')),
       ...S.documentTypeListItems().filter(listItem => !hiddenTypes.includes(listItem.getId()))
     ])

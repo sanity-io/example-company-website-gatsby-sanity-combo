@@ -42,13 +42,13 @@ export default {
     },
     {
       name: 'categories',
-      title: 'Categories',
+      title: 'Country',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'category' } }]
     },
     {
       name: 'relatedProjects',
-      title: 'Related place',
+      title: 'Link to Place',
       type: 'array',
       of: [{ type: 'reference', to: { type: 'project' } }]
     },

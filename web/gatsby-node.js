@@ -123,6 +123,50 @@ async function createCategoryPages (graphql, actions) {
     })
 }
 
+async function createActivityPages (graphql, actions) {
+  // Get Gatsby‘s method for creating new pages
+  const {createPage} = actions
+  // Query Gatsby‘s GraphAPI for all the categories that come from Sanity
+  // You can query this API on http://localhost:8000/___graphql
+  const result = await graphql(`{
+    allSanityActivity {
+      nodes {
+        title
+        slug {
+          current
+        }
+        id
+      }
+    }
+  }
+  `)
+  // If there are any errors in the query, cancel the build and tell us
+  if (result.errors) throw result.errors
+
+  // Let‘s gracefully handle if allSanityCatgogy is null
+  const activityNodes = (result.data.allSanityActivity || {}).nodes || []
+
+  activityNodes
+    // Loop through the activity nodes, but don't return anything
+    .forEach((node) => {
+      // Desctructure the id and slug fields for each activity
+      const {id, slug = {}} = node
+      // If there isn't a slug, we want to do nothing
+      if (!slug) return
+
+      // Make the URL with the current slug
+      const path = `/activities/${slug.current}`
+
+      // Create the page using the URL path and the template file, and pass down the id
+      // that we can use to query for the right activity in the template file
+      createPage({
+        path,
+        component: require.resolve('./src/templates/activity.js'),
+        context: {id}
+      })
+    })
+}
+
 exports.createResolvers = ({createResolvers}) => {
   const resolvers = {
     SanityCategory: {
@@ -131,6 +175,25 @@ exports.createResolvers = ({createResolvers}) => {
         resolve (source, args, context, info) {
           return context.nodeModel.runQuery({
             type: 'SanityPost',
+            query: {
+              filter: {
+                categories: {
+                  elemMatch: {
+                    _id: {
+                      eq: source._id
+                    }
+                  }
+                }
+              }
+            }
+          })
+        }
+      },
+      activities: {
+        type: ['SanityActivity'],
+        resolve (source, args, context, info) {
+          return context.nodeModel.runQuery({
+            type: 'SanityActivity',
             query: {
               filter: {
                 categories: {
@@ -173,4 +236,5 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   await createBlogPostPages(graphql, actions, reporter)
   await createProjectPages(graphql, actions, reporter)
   await createCategoryPages(graphql, actions, reporter) // <= add the function here
+  await createActivityPages(graphql, actions, reporter) // <= add the function here
 }

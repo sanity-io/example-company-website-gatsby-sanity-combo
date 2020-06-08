@@ -30,30 +30,17 @@ function Project (props) {
         <div className={styles.grid}>
           <div className={styles.mainContent}>
             <h1 className={styles.title}>{title}</h1>
-            {_rawBody && <BlockContent blocks={_rawBody || []} />}
-          </div>
-          <aside className={styles.metaContent}>
-            {publishedAt && (
-              <div className={styles.publishedAt}>
-                {differenceInDays(new Date(publishedAt), new Date()) > 3
-                  ? distanceInWords(new Date(publishedAt), new Date())
-                  : format(new Date(publishedAt), 'MMMM Do YYYY')}
-              </div>
-            )}
-            {members && <RoleList items={members} title='Authors' />}
             {categories && (
               <div className={styles.categories}>
-                <h3 className={styles.categoriesHeadline}>Country</h3>
-                <ul>
-                  {categories.map(category => (
-                    <Link to={`/categories/${category.slug.current}`}>{category.title}</Link>
-                  ))}
-                </ul>
+                {categories.map(category => (
+                  <Link to={`/categories/${category.slug.current}`}>{category.title}</Link>
+                ))}
               </div>
             )}
+            {_rawBody && <BlockContent blocks={_rawBody || []} />}
             {relatedPosts && (
               <div className={styles.relatedPosts}>
-                <h3 className={styles.relatedPostsHeadline}>Related Posts</h3>
+                <h3 className={styles.relatedPostsHeadline}>Posts</h3>
                 <ul>
                   {relatedPosts.map(post => (
                     <li key={post._id}>
@@ -63,19 +50,7 @@ function Project (props) {
                 </ul>
               </div>
             )}
-            {relatedProjects && (
-              <div className={styles.relatedProjects}>
-                <h3 className={styles.relatedProjectsHeadline}>Related projects</h3>
-                <ul>
-                  {relatedProjects.map(project => (
-                    <li key={`related_${project._id}`}>
-                      <Link to={`/project/${project.slug.current}`}>{project.title}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </aside>
+          </div>
         </div>
       </Container>
     </article>

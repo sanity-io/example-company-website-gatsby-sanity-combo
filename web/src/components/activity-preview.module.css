@@ -1,0 +1,42 @@
+.root {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.title {
+  composes: responsiveTitle1 from './typography.module.css';
+}
+
+.leadMediaThumb {
+  position: relative;
+  padding-bottom: 66.666%;
+  background: #eee;
+
+  @nest & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.title {
+  @media (hover: hover) {
+    @nest .root:hover & {
+      text-decoration: underline;
+    }
+  }
+}
+
+.excerpt {
+  @nest & p {
+    margin: 0.5em 0;
+  }
+
+  @nest & strong {
+    font-weight: 600;
+  }
+}

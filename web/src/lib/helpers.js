@@ -21,6 +21,10 @@ export function getProjectUrl (slug) {
   return `/project/${slug.current || slug}/`
 }
 
+export function getActivityUrl (slug) {
+  return `/activities/${slug.current || slug}/`
+}
+
 export function buildImageObj (source) {
   const imageObj = {
     asset: { _ref: source.asset._ref || source.asset._id }

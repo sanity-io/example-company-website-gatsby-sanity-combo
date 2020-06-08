@@ -1,6 +1,6 @@
 export default {
-  name: 'project',
-  title: 'Place',
+  name: 'activity',
+  title: 'Activity',
   type: 'document',
   fields: [
     {
@@ -12,7 +12,7 @@ export default {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      description: 'Some frontend will require a slug to be set to be able to show the project',
+      description: 'Some frontend will require a slug to be set to be able to show the post',
       options: {
         source: 'title',
         maxLength: 96
@@ -21,29 +21,13 @@ export default {
     {
       name: 'publishedAt',
       title: 'Published at',
-      description: 'You can use this field to schedule projects where you show them',
+      description: 'You can use this field to schedule post where you show them',
       type: 'datetime'
     },
     {
       name: 'excerpt',
       title: 'Excerpt',
       type: 'blockText'
-    },
-    {
-      name: 'members',
-      title: 'Members',
-      type: 'array',
-      of: [{ type: 'projectMember' }]
-    },
-    {
-      name: 'startedAt',
-      title: 'Arrived at',
-      type: 'date'
-    },
-    {
-      name: 'endedAt',
-      title: 'Departed',
-      type: 'date'
     },
     {
       name: 'mainImage',
@@ -57,21 +41,27 @@ export default {
       of: [{ type: 'reference', to: { type: 'category' } }]
     },
     {
+      name: 'relatedProjects',
+      title: 'Link to Place',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'project' } }]
+    },
+    {
       name: 'body',
       title: 'Body',
       type: 'blockContent'
+    }
+  ],
+  orderings: [
+    {
+      title: 'Publishing date new–>old',
+      name: 'publishingDateAsc',
+      by: [{ field: 'publishedAt', direction: 'asc' }, { field: 'title', direction: 'asc' }]
     },
     {
-      name: 'relatedPosts',
-      title: 'Related Posts',
-      type: 'array',
-      of: [{ type: 'reference', to: { type: 'post' } }]
-    },
-    {
-      name: 'relatedProjects',
-      title: 'Related places',
-      type: 'array',
-      of: [{ type: 'reference', to: { type: 'project' } }]
+      title: 'Publishing date old->new',
+      name: 'publishingDateDesc',
+      by: [{ field: 'publishedAt', direction: 'desc' }, { field: 'title', direction: 'asc' }]
     }
   ],
   preview: {

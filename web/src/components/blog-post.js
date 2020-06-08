@@ -29,39 +29,35 @@ function BlogPost (props) {
         <div className={styles.grid}>
           <div className={styles.mainContent}>
             <h1 className={styles.title}>{title}</h1>
-            {_rawBody && <BlockContent blocks={_rawBody} />}
-          </div>
-          <aside className={styles.metaContent}>
-            {publishedAt && (
-              <div className={styles.publishedAt}>
-                {differenceInDays(new Date(publishedAt), new Date()) > 3
-                  ? distanceInWords(new Date(publishedAt), new Date())
-                  : format(new Date(publishedAt), 'MMMM Do YYYY')}
-              </div>
-            )}
-            {authors && <RoleList items={authors} title='Country' />}
-            {categories && (
-              <div className={styles.categories}>
-                <h3 className={styles.categoriesHeadline}>Country</h3>
-                <ul>
+            <div className={styles.metaContent}>
+              {categories && (
+                <span className={styles.categories}>
                   {categories.map(category => (
                     <Link to={`/categories/${category.slug.current}`}>{category.title}</Link>
                   ))}
-                </ul>
-              </div>
-            )}
-            {relatedProjects && (
-              <div className={styles.relatedProjects}>
-                <h3 className={styles.relatedProjectsHeadline}>Place</h3>
-                <ul>
+                </span>
+              )}
+              {relatedProjects && (
+                <span className={styles.relatedProjects}>
                   {relatedProjects.map(project => (
-                    <li key={`related_${project._id}`}>
+                    <span key={`related_${project._id}`}>
                       <Link to={`/project/${project.slug.current}`}>{project.title}</Link>
-                    </li>
+                    </span>
                   ))}
-                </ul>
-              </div>
-            )}
+                </span>
+              )}
+              {publishedAt && (
+                <div className={styles.publishedAt}>
+                  {differenceInDays(new Date(publishedAt), new Date()) > 3
+                    ? distanceInWords(new Date(publishedAt), new Date())
+                    : format(new Date(publishedAt), 'MMMM Do YYYY')}
+                </div>
+              )}
+            </div>
+            {_rawBody && <BlockContent blocks={_rawBody} />}
+          </div>
+          <aside className={styles.metaContent}>
+            {authors && <RoleList items={authors} title='Author' />}
           </aside>
         </div>
       </Container>
