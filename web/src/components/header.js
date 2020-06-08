@@ -22,10 +22,13 @@ const Header = ({ onHideNav, onShowNav, showNav, siteTitle }) => (
             <Link to='/about/'>About</Link>
           </li>
           <li>
-            <Link to='/projects/'>Countries</Link>
+            <Link to='/categories/'>Countries</Link>
           </li>
           <li>
-            <Link to='/blog/'>Blog</Link>
+            <Link to='/projects/'>Places</Link>
+          </li>
+          <li>
+            <Link to='/blog/'>Journal</Link>
           </li>
           <li>
             <Link to='/contact/'>Contact</Link>

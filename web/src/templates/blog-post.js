@@ -14,6 +14,9 @@ export const query = graphql`
       categories {
         _id
         title
+        slug {
+          current
+        }
       }
       mainImage {
         crop {
@@ -40,6 +43,13 @@ export const query = graphql`
       title
       slug {
         current
+      }
+      relatedProjects {
+        title
+        _id
+        slug {
+          current
+        }
       }
       _rawBody
       authors {

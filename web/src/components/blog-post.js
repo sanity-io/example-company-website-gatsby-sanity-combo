@@ -1,5 +1,6 @@
 import { format, distanceInWords, differenceInDays } from 'date-fns'
 import React from 'react'
+import { Link } from 'gatsby'
 import { buildImageObj } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
 import BlockContent from './block-content'
@@ -9,7 +10,7 @@ import RoleList from './role-list'
 import styles from './blog-post.module.css'
 
 function BlogPost (props) {
-  const { _rawBody, authors, categories, title, mainImage, publishedAt } = props
+  const { _rawBody, authors, categories, relatedProjects, title, mainImage, publishedAt } = props
   return (
     <article className={styles.root}>
       {mainImage && mainImage.asset && (
@@ -41,10 +42,22 @@ function BlogPost (props) {
             {authors && <RoleList items={authors} title='Country' />}
             {categories && (
               <div className={styles.categories}>
-                <h3 className={styles.categoriesHeadline}>Categories</h3>
+                <h3 className={styles.categoriesHeadline}>Country</h3>
                 <ul>
                   {categories.map(category => (
-                    <li key={category._id}>{category.title}</li>
+                    <Link to={`/categories/${category.slug.current}`}>{category.title}</Link>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {relatedProjects && (
+              <div className={styles.relatedProjects}>
+                <h3 className={styles.relatedProjectsHeadline}>Place</h3>
+                <ul>
+                  {relatedProjects.map(project => (
+                    <li key={`related_${project._id}`}>
+                      <Link to={`/project/${project.slug.current}`}>{project.title}</Link>
+                    </li>
                   ))}
                 </ul>
               </div>

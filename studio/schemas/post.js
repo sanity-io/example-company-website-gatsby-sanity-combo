@@ -47,6 +47,12 @@ export default {
       of: [{ type: 'reference', to: { type: 'category' } }]
     },
     {
+      name: 'relatedProjects',
+      title: 'Related place',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'project' } }]
+    },
+    {
       name: 'body',
       title: 'Body',
       type: 'blockContent'

@@ -2,6 +2,7 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../lib/helpers'
 import BlogPostPreviewGrid from '../components/blog-post-preview-grid'
+import CategoryPreviewGrid from '../components/category-preview-grid'
 import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import ProjectPreviewGrid from '../components/project-preview-grid'
@@ -44,6 +45,20 @@ export const query = graphql`
           }
           title
           _rawExcerpt
+          slug {
+            current
+          }
+        }
+      }
+    }
+
+    categories: allSanityCategory(limit: 6, sort: { fields: [publishedAt], order: DESC }) {
+      edges {
+        node {
+          id
+          publishedAt
+          title
+          description
           slug {
             current
           }
@@ -107,6 +122,9 @@ const IndexPage = props => {
   const projectNodes = (data || {}).projects
     ? mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
     : []
+  const categoryNodes = (data || {}).categories
+    ? mapEdgesToNodes(data.categories).filter(filterOutDocsWithoutSlugs)
+    : []
 
   if (!site) {
     throw new Error(
@@ -131,6 +149,13 @@ const IndexPage = props => {
             title='Latest blog posts'
             nodes={postNodes}
             browseMoreHref='/blog/'
+          />
+        )}
+        {categoryNodes && (
+          <CategoryPreviewGrid
+            title='Latest countries'
+            nodes={categoryNodes}
+            browseMoreHref='/categories/'
           />
         )}
       </Container>

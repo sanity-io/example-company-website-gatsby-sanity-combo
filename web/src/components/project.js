@@ -6,6 +6,7 @@ import { imageUrlFor } from '../lib/image-url'
 import BlockContent from './block-content'
 import Container from './container'
 import RoleList from './role-list'
+import {getBlogUrl} from '../lib/helpers'
 
 import styles from './project.module.css'
 
@@ -42,10 +43,10 @@ function Project (props) {
             {members && <RoleList items={members} title='Authors' />}
             {categories && (
               <div className={styles.categories}>
-                <h3 className={styles.categoriesHeadline}>Categories</h3>
+                <h3 className={styles.categoriesHeadline}>Country</h3>
                 <ul>
                   {categories.map(category => (
-                    <li key={category._id}>{category.title}</li>
+                    <Link to={`/categories/${category.slug.current}`}>{category.title}</Link>
                   ))}
                 </ul>
               </div>
@@ -55,7 +56,9 @@ function Project (props) {
                 <h3 className={styles.relatedPostsHeadline}>Related Posts</h3>
                 <ul>
                   {relatedPosts.map(post => (
-                    <li key={post._id}>{post.title}</li>
+                    <li key={post._id}>
+                      <Link to={getBlogUrl(post.publishedAt, post.slug)}>{post.title}</Link>
+                    </li>
                   ))}
                 </ul>
               </div>

@@ -14,6 +14,9 @@ export const query = graphql`
       categories {
         _id
         title
+        slug {
+          current
+        }
       }
       relatedProjects {
         title

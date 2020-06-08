@@ -87,6 +87,7 @@ async function createCategoryPages (graphql, actions) {
   const result = await graphql(`{
     allSanityCategory {
       nodes {
+        title
         slug {
           current
         }
