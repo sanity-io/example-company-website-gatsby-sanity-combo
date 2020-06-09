@@ -16,6 +16,12 @@ export const query = graphql`
         node {
           id
           title
+          mainImage {
+            asset {
+              _id
+            }
+            alt
+          }
           description
           slug {
             current

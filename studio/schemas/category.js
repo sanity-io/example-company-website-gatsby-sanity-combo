@@ -21,6 +21,11 @@ export default {
       }
     },
     {
+      name: 'mainImage',
+      title: 'Main image',
+      type: 'mainImage'
+    },
+    {
       name: 'publishedAt',
       title: 'Published at',
       description: 'You can use this field to schedule post where you show them',

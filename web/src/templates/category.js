@@ -4,10 +4,14 @@ import Container from '../components/container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import { buildImageObj } from '../lib/helpers'
+import { imageUrlFor } from '../lib/image-url'
 // Import a function to build the blog URL
 import {getBlogUrl} from '../lib/helpers'
 import {getProjectUrl} from '../lib/helpers'
 import {getActivityUrl} from '../lib/helpers'
+
+import styles from './category.module.css'
 
 // Add “posts” to the GraphQL query
 export const query = graphql`
@@ -15,6 +19,28 @@ export const query = graphql`
     category: sanityCategory(id: {eq: $id}) {
       title
       description
+      mainImage {
+        crop {
+          _key
+          _type
+          top
+          bottom
+          left
+          right
+        }
+        hotspot {
+          _key
+          _type
+          x
+          y
+          height
+          width
+        }
+        asset {
+          _id
+        }
+        alt
+      }
       posts {
         _id
         title
@@ -43,10 +69,22 @@ export const query = graphql`
 const CategoryPostTemplate = props => {
   const {data = {}, errors} = props
   // Destructure the new posts property from props
-  const {title, description, posts, projects, activities} = data.category || {}
+  const {title, description, mainImage, posts, projects, activities} = data.category || {}
   console.log(data)
   return (
     <Layout>
+      {mainImage && mainImage.asset && (
+        <div className={styles.mainImage}>
+          <img
+            src={imageUrlFor(buildImageObj(mainImage))
+              .width(1200)
+              .height(Math.floor((9 / 16) * 1200))
+              .fit('crop')
+              .url()}
+            alt={mainImage.alt}
+          />
+        </div>
+      )}
       <Container>
         {errors && <GraphQLErrorList errors={errors} />}
         {!data.category && <p>No category data</p>}
