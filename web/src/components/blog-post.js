@@ -33,7 +33,7 @@ function BlogPost (props) {
               {categories && (
                 <span className={styles.categories}>
                   {categories.map(category => (
-                    <Link to={`/categories/${category.slug.current}`}>{category.title}</Link>
+                    <Link to={`/country/${category.slug.current}`}>{category.title}</Link>
                   ))}
                 </span>
               )}
@@ -41,7 +41,7 @@ function BlogPost (props) {
                 <span className={styles.relatedProjects}>
                   {relatedProjects.map(project => (
                     <span key={`related_${project._id}`}>
-                      <Link to={`/project/${project.slug.current}`}>{project.title}</Link>
+                      <Link to={`/place/${project.slug.current}`}>{project.title}</Link>
                     </span>
                   ))}
                 </span>

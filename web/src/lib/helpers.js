@@ -18,7 +18,7 @@ export function getBlogUrl (publishedAt, slug) {
 }
 
 export function getProjectUrl (slug) {
-  return `/project/${slug.current || slug}/`
+  return `/place/${slug.current || slug}/`
 }
 
 export function getActivityUrl (slug) {

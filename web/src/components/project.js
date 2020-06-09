@@ -33,7 +33,7 @@ function Project (props) {
             {categories && (
               <div className={styles.categories}>
                 {categories.map(category => (
-                  <Link to={`/categories/${category.slug.current}`}>{category.title}</Link>
+                  <Link to={`/country/${category.slug.current}`}>{category.title}</Link>
                 ))}
               </div>
             )}

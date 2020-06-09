@@ -67,7 +67,7 @@ async function createProjectPages (graphql, actions, reporter) {
   projectEdges.forEach(edge => {
     const id = edge.node.id
     const slug = edge.node.slug.current
-    const path = `/project/${slug}/`
+    const path = `/place/${slug}/`
 
     reporter.info(`Creating project page: ${path}`)
 
@@ -111,7 +111,7 @@ async function createCategoryPages (graphql, actions) {
       if (!slug) return
 
       // Make the URL with the current slug
-      const path = `/categories/${slug.current}`
+      const path = `/country/${slug.current}`
 
       // Create the page using the URL path and the template file, and pass down the id
       // that we can use to query for the right category in the template file
