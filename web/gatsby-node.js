@@ -6,7 +6,7 @@ const { format } = require('date-fns')
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-async function createBlogPostPages (graphql, actions, reporter) {
+async function createBlogPostPages(graphql, actions, reporter) {
   const { createPage } = actions
   const result = await graphql(`
     {
@@ -43,7 +43,7 @@ async function createBlogPostPages (graphql, actions, reporter) {
   })
 }
 
-async function createProjectPages (graphql, actions, reporter) {
+async function createProjectPages(graphql, actions, reporter) {
   const { createPage } = actions
   const result = await graphql(`
     {

@@ -1,0 +1,87 @@
+.root {
+  padding: 1rem;
+}
+
+.previewWrapper {
+  position: relative;
+  overflow: hidden;
+
+  @nest & img {
+    width: 100%;
+  }
+
+  @nest & .adWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.adWrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.nmatrix {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin-top: 0;
+}
+
+.radioWrapper {
+  margin-bottom: 0.5rem;
+}
+
+.filter {
+  position: relative;
+}
+
+.filter::before {
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.aden {
+  filter: hue-rotate(-20deg) contrast(.9) saturate(.85) brightness(1.2);
+}
+
+.aden::before {
+  background: linear-gradient(to right,rgba(66,10,14,.2),transparent);
+  mix-blend-mode: darken;
+}
+
+.gingham {
+  filter: contrast(1.1) brightness(1.1);
+}
+
+.gingham::before {
+  background: #e6e6e6;
+  content: "";
+  mix-blend-mode: soft-light;
+}
+
+.brooklyn {
+  filter: sepia(0.25) contrast(1.25) brightness(1.25) hue-rotate(5deg);
+}
+
+.brooklyn::before {
+  background: rgba(127, 187, 227, 0.2);
+  content: "";
+  mix-blend-mode: overlay;
+}
+
+.amaro {
+  filter: sepia(0.35) contrast(1.1) brightness(1.2) saturate(1.3);
+}
+
+.amaro::before {
+  background: rgba(125, 105, 24, 0.2);
+  content: "";
+  mix-blend-mode: overlay;
+}

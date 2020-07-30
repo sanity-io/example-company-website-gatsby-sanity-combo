@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Larsseit&display=swap');
+
+.banner {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.content {
+  font-family: Larsseit;
+  position: absolute;
+  bottom: 5%;
+  color: white;
+  opacity: 0.8;
+  padding: 1em;
+}
+
+.heading {
+  font-weight: 700;
+  font-size: 5em;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.tagline {
+  font-weight: 500;
+  font-size: 2em;
+}

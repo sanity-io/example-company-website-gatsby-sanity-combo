@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Larsseit&display=swap');
+
+.banner {
+  font-family: Larsseit, sans-serif;
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+.heading {
+  position: absolute;
+  top: 5%;
+  left: 95%;
+  transform: rotateZ(90deg);
+  transform-origin: left top;
+  font-size: 2.1em;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.tagline {
+  position: absolute;
+  bottom: 8%;
+  font-size: 0.6em;
+}

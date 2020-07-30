@@ -1,0 +1,68 @@
+
+.seoItem {
+  margin: 15px;
+  margin-top: 30px;
+}
+
+.facebookWrapper {
+  background-color: #f6f6f6;
+  overflow: hidden;
+}
+
+.facebookImageContainer {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.facebookCardImage {
+  max-height: 262px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.facebookCardContent {
+  padding: 10px 12px;
+  color: #606770;
+}
+
+.facebookCardUrl {
+  color: #606770;
+  flex-shrink: 0;
+  font-size: 12px;
+  line-height: 16px;
+  overflow: hidden;
+  padding: 0;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.facebookCardTitle {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+}
+
+.facebookCardTitle a {
+  color: #1d2129;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 20px;
+  margin: 3px 0 0;
+  padding-top: 2px;
+  text-decoration: none;
+}
+
+.facebookCardDescription {
+  color: #606770;
+  font-size: 14px;
+  line-height: 20px;
+  max-height: 80px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+}

@@ -5,6 +5,18 @@ import client from "part:@sanity/base/client";
 import locationStore from "part:@sanity/base/location";
 import { map } from "rxjs/operators";
 
+import EyeIcon from "part:@sanity/base/eye-icon";
+import EditIcon from "part:@sanity/base/edit-icon";
+
+import IframePreview from "./components/previews/iframe/IframePreview";
+import SeoPreview from "./components/previews/seo/SeoPreviews";
+
+const remoteURL =
+  process.env.REMOTE_URL || "https://gatsby-portfolio-preview-poc-4165823465.gtsb.io";
+const localURL = "http://localhost:8000";
+const previewURL = window.location.hostname === "localhost" ? localURL : remoteURL;
+console.log("previewURL", previewURL);
+
 const hiddenTypes = [
   "category",
   "companyInfo",
@@ -39,11 +51,53 @@ const webriq = S.list()
     S.listItem()
       .title("Projects")
       .schemaType("project")
-      .child(S.documentTypeList("project")),
+      .child(
+        S.documentTypeList("project")
+          .title("Projects")
+          .child(documentId =>
+            S.document()
+              .documentId(documentId)
+              .schemaType("project")
+              .views([
+                S.view.form().icon(EditIcon),
+                S.view
+                  .component(IframePreview)
+                  .options({ previewURL })
+                  .icon(EyeIcon)
+                  .title("Web Preview"),
+                S.view
+                  .component(SeoPreview)
+                  .options({ previewURL })
+                  .icon(EyeIcon)
+                  .title("SEO Preview")
+              ])
+          )
+      ),
     S.listItem()
       .title("Blog posts")
       .schemaType("post")
-      .child(S.documentTypeList("post").title("Blog posts")),
+      .child(
+        S.documentTypeList("post")
+          .title("Blog posts")
+          .child(documentId =>
+            S.document()
+              .documentId(documentId)
+              .schemaType("post")
+              .views([
+                S.view.form().icon(EditIcon),
+                S.view
+                  .component(IframePreview)
+                  .options({ previewURL })
+                  .icon(EyeIcon)
+                  .title("Web Preview"),
+                S.view
+                  .component(SeoPreview)
+                  .options({ previewURL })
+                  .icon(EyeIcon)
+                  .title("SEO Preview")
+              ])
+          )
+      ),
     S.listItem()
       .title("Pages")
       .child(
