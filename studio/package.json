@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@sanity/base": "^0.147.8",
-    "@sanity/cli": "^0.146.0",
+    "@sanity/cli": "^2.0.3",
     "@sanity/components": "^1.148.5",
     "@sanity/core": "^1.148.5",
     "@sanity/default-layout": "^1.148.5",
