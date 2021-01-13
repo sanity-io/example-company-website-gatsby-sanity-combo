@@ -1,11 +1,11 @@
 {
   "root": true,
   "api": {
-    "projectId": "9nhae6b7",
-    "dataset": "production"
+    "projectId": "sm95nn3r",
+    "dataset": "bealthy-dataset"
   },
   "project": {
-    "name": "Gatsby Demo",
+    "name": "Bealth",
     "basePath": "/"
   },
   "plugins": [
