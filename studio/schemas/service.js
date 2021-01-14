@@ -1,10 +1,10 @@
-import { MdBook } from "react-icons/md";
+import { MdHealing } from "react-icons/md";
 
 export default {
-  name: "project",
-  title: "Project",
+  name: "service",
+  title: "Service",
   type: "document",
-  icon: MdBook,
+  icon: MdHealing,
   fields: [
     {
       name: "title",
@@ -39,16 +39,6 @@ export default {
       of: [{ type: "projectMember" }]
     },
     {
-      name: "startedAt",
-      title: "Started at",
-      type: "datetime"
-    },
-    {
-      name: "endedAt",
-      title: "Ended at",
-      type: "datetime"
-    },
-    {
       name: "mainImage",
       title: "Main image",
       type: "mainImage"
@@ -63,6 +53,12 @@ export default {
       name: "body",
       title: "Body",
       type: "blockContent"
+    },
+    {
+      name: "relatedPosts",
+      title: "Related posts",
+      type: "array",
+      of: [{ type: "reference", to: { type: "post" } }]
     },
     {
       name: "relatedProjects",
