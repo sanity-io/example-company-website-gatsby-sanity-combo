@@ -1,6 +1,7 @@
 import { format, distanceInWords, differenceInDays } from 'date-fns'
 import React from 'react'
-import { buildImageObj } from '../lib/helpers'
+import { Link } from 'gatsby'
+import { buildImageObj, getBlogUrl, getServiceUrl } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
 import BlockContent from './block-content'
 import Container from './container'
@@ -8,8 +9,18 @@ import RoleList from './role-list'
 
 import styles from './blog-post.module.css'
 
-function BlogPost (props) {
-  const { _rawBody, authors, categories, title, mainImage, publishedAt } = props
+function BlogPost(props) {
+  const {
+    _rawBody,
+    authors,
+    categories,
+    title,
+    mainImage,
+    publishedAt,
+    relatedProjects,
+    relatedServices,
+    relatedPosts
+  } = props
   return (
     <article className={styles.root}>
       {mainImage && mainImage.asset && (
@@ -38,13 +49,49 @@ function BlogPost (props) {
                   : format(new Date(publishedAt), 'MMMM Do YYYY')}
               </div>
             )}
-            {authors && <RoleList items={authors} title='Authors' />}
+            {authors && <RoleList items={authors} title="Authors" />}
             {categories && (
               <div className={styles.categories}>
                 <h3 className={styles.categoriesHeadline}>Categories</h3>
                 <ul>
                   {categories.map(category => (
                     <li key={category._id}>{category.title}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {relatedProjects && (
+              <div className={styles.relatedProjects}>
+                <h3 className={styles.relatedProjectsHeadline}>Related projects</h3>
+                <ul>
+                  {relatedProjects.map(project => (
+                    <li key={`related_${project._id}`}>
+                      <Link to={`/project/${project.slug.current}`}>{project.title}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {relatedPosts && (
+              <div className={styles.relatedPosts}>
+                <h3 className={styles.relatedPostsHeadline}>Related posts</h3>
+                <ul>
+                  {relatedPosts.map(post => (
+                    <li key={`related_${post._id}`}>
+                      <Link to={getBlogUrl(post.publishedAt, post.slug.current)}>{post.title}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {relatedServices && (
+              <div className={styles.relatedServices}>
+                <h3 className={styles.relatedServicesHeadline}>Related services</h3>
+                <ul>
+                  {relatedServices.map(service => (
+                    <li key={`related_${service._id}`}>
+                      <Link to={getServiceUrl(service.slug.current)}>{service.title}</Link>
+                    </li>
                   ))}
                 </ul>
               </div>

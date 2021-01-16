@@ -22,6 +22,22 @@ export const query = graphql`
           current
         }
       }
+      relatedPosts {
+        title
+        _id
+        publishedAt
+        slug {
+          current
+        }
+      }
+      relatedServices {
+        title
+        _id
+        publishedAt
+        slug {
+          current
+        }
+      }
       mainImage {
         crop {
           _key
@@ -86,7 +102,7 @@ const ProjectTemplate = props => {
   const project = data && data.project
   return (
     <Layout>
-      {errors && <SEO title='GraphQL Error' />}
+      {errors && <SEO title="GraphQL Error" />}
       {project && <SEO title={project.title || 'Untitled'} />}
 
       {errors && (

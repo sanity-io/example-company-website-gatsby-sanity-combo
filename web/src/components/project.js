@@ -1,7 +1,7 @@
 import { format, distanceInWords, differenceInDays } from 'date-fns'
 import React from 'react'
 import { Link } from 'gatsby'
-import { buildImageObj } from '../lib/helpers'
+import { buildImageObj, getBlogUrl, getServiceUrl } from '../lib/helpers'
 import { imageUrlFor } from '../lib/image-url'
 import BlockContent from './block-content'
 import Container from './container'
@@ -9,8 +9,18 @@ import RoleList from './role-list'
 
 import styles from './project.module.css'
 
-function Project (props) {
-  const { _rawBody, title, categories, mainImage, members, publishedAt, relatedProjects } = props
+function Project(props) {
+  const {
+    _rawBody,
+    title,
+    categories,
+    mainImage,
+    members,
+    publishedAt,
+    relatedProjects,
+    relatedServices,
+    relatedPosts
+  } = props
   return (
     <article className={styles.root}>
       {props.mainImage && mainImage.asset && (
@@ -39,7 +49,7 @@ function Project (props) {
                   : format(new Date(publishedAt), 'MMMM Do YYYY')}
               </div>
             )}
-            {members && <RoleList items={members} title='Authors' />}
+            {members && <RoleList items={members} title="Authors" />}
             {categories && (
               <div className={styles.categories}>
                 <h3 className={styles.categoriesHeadline}>Categories</h3>
@@ -57,6 +67,30 @@ function Project (props) {
                   {relatedProjects.map(project => (
                     <li key={`related_${project._id}`}>
                       <Link to={`/project/${project.slug.current}`}>{project.title}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {relatedPosts && (
+              <div className={styles.relatedPosts}>
+                <h3 className={styles.relatedPostsHeadline}>Related posts</h3>
+                <ul>
+                  {relatedPosts.map(post => (
+                    <li key={`related_${post._id}`}>
+                      <Link to={getBlogUrl(post.publishedAt, post.slug.current)}>{post.title}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            {relatedServices && (
+              <div className={styles.relatedServices}>
+                <h3 className={styles.relatedServicesHeadline}>Related services</h3>
+                <ul>
+                  {relatedServices.map(service => (
+                    <li key={`related_${service._id}`}>
+                      <Link to={getServiceUrl(service.slug.current)}>{service.title}</Link>
                     </li>
                   ))}
                 </ul>
