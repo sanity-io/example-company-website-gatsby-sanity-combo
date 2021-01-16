@@ -53,6 +53,24 @@ export default {
       name: "body",
       title: "Body",
       type: "blockContent"
+    },
+    {
+      name: "relatedProjects",
+      title: "Related projects",
+      type: "array",
+      of: [{ type: "reference", to: { type: "project" } }]
+    },
+    {
+      name: "relatedPosts",
+      title: "Related posts",
+      type: "array",
+      of: [{ type: "reference", to: { type: "post" } }]
+    },
+    {
+      name: "relatedServices",
+      title: "Related services",
+      type: "array",
+      of: [{ type: "reference", to: { type: "service" } }]
     }
   ],
   orderings: [
