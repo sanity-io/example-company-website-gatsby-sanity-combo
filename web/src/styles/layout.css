@@ -1,7 +1,7 @@
 @import './vars.css';
 
 html {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: Tahoma;
   font-size: var(--font-base-size);
   line-height: var(--font-base-line-height);
 }
@@ -13,6 +13,9 @@ body {
   margin: 0;
 }
 
-html, body, body > div, body > div > div {
+html,
+body,
+body > div,
+body > div > div {
   height: 100%;
 }
