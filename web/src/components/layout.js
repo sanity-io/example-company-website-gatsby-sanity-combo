@@ -30,7 +30,8 @@ const Layout = ({ children, companyInfo, onHideNav, onShowNav, showNav, siteTitl
         </div>
 
         <div className={styles.siteInfo}>
-          © {new Date().getFullYear()}, Built with <a href="https://www.sanity.io">Sanity</a> &amp;
+          © {new Date().getFullYear()}, Bootstrapped with <a href="https://www.sanity.io">Sanity</a>{' '}
+          &amp;
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
           {` `}
