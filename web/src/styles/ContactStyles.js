@@ -1,6 +1,14 @@
 import styled from 'styled-components'
 
 const ContactStyles = styled.form`
+  .mapleSyrup {
+    display: none;
+  }
+
+  .form-item-honeypot {
+    display: none;
+  }
+
   .form {
     max-width: 100%;
     width: 25rem;

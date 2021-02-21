@@ -51,7 +51,7 @@ exports.handler = async (event, context) => {
     )
   }
 
-  const response = sgMail.send(msg)
+  const response = await sgMail.send(msg)
 
   console.log('sendGridResponse:', response)
 

@@ -123,6 +123,19 @@ const ContactPage = props => {
               required
             />
           </div>
+          <div className="form-item-honeypot">
+            <label className="contact-label" htmlFor="mapleSyrup"></label>
+            <input
+              type="text"
+              id="mapleSyrup"
+              className="contact-input"
+              name="mapleSyrup"
+              value={'...'}
+              value={values.mapleSyrup}
+              onChange={updateValues}
+              required
+            />
+          </div>
           <div className="form-item">
             <label className="contact-label" htmlFor="message">
               Message:
