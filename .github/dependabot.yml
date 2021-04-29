@@ -1,0 +1,55 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/studio"
+  schedule:
+    interval: daily
+    time: "09:30"
+    timezone: Europe/Oslo
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: "@sanity/core"
+    versions:
+    - 2.2.3
+    - 2.2.6
+    - 2.3.3
+    - 2.3.8
+    - 2.4.0
+    - 2.5.0
+    - 2.6.0
+    - 2.6.1
+    - 2.6.2
+    - 2.7.0
+    - 2.7.1
+    - 2.7.2
+    - 2.7.4
+    - 2.8.0
+    - 2.9.1
+  - dependency-name: "@sanity/cli"
+    versions:
+    - 2.2.5
+    - 2.2.6
+    - 2.3.8
+    - 2.4.0
+    - 2.5.0
+    - 2.6.0
+    - 2.7.0
+    - 2.7.1
+    - 2.7.2
+    - 2.7.4
+    - 2.8.0
+    - 2.9.1
+  - dependency-name: "@sanity/default-login"
+    versions:
+    - 2.1.4
+    - 2.2.6
+    - 2.7.0
+  - dependency-name: "@sanity/components"
+    versions:
+    - 2.1.4
+  - dependency-name: react-icons
+    versions:
+    - 4.1.0
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
